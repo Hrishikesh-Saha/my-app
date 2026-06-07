@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff8f4;
+  --foreground: #3b0b08;
+  --card: #fffdf9;
+  --muted: #7c514a;
+  --primary: #b83449;
+  --primary-dark: #8e2534;
+  --primary-soft: #f9ded2;
+  --border: #efcfc4;
+  --ring: #cf6471;
 }
 
 @theme inline {
@@ -12,15 +19,58 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), "Noto Sans Bengali", "Nirmala UI", Arial, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--primary-soft);
+}
+
+.font-display {
+  font-family: Georgia, "Noto Serif Bengali", "Nirmala UI", serif;
+}
+
+.container-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.soft-card {
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 92%, white);
+  box-shadow: 0 12px 32px rgba(88, 32, 25, 0.06);
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ring) 35%, transparent);
+  outline-offset: 2px;
+}
+
+.red-action-link,
+.red-action-link * {
+  color: #ffffff !important;
 }
