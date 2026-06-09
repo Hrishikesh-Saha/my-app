@@ -44,7 +44,7 @@ const featureCards: Array<{
     href: "/tracker",
     icon: Calendar,
     title: "পিরিয়ড ট্র্যাকার",
-    text: "প্রতিটি চক্র সহজে রেকর্ড করুন এবং পরবর্তী তারিখ আগে থেকে জানুন।",
+    text: "নীরবতায় নয়, দৃঢ়তায় নারীর পরিচয়। আপনার মাসিক চক্রের প্রতিটি পর্যায়ে নির্ভরযোগ্য তথ্য ও সহায়তা।",
   },
   {
     href: "/pregnancy",
@@ -144,18 +144,38 @@ const emergencySections = [
     title: "নিকটস্থ হাসপাতাল",
     icon: Hospital,
     items: [
-      ["ঢাকা মেডিকেল কলেজ হাসপাতাল", "বকশীবাজার, ঢাকা", "০১৭২৬-০০০০০০", "২৪ ঘণ্টা"],
+      [
+        "ঢাকা মেডিকেল কলেজ হাসপাতাল",
+        "বকশীবাজার, ঢাকা",
+        "০১৭২৬-০০০০০০",
+        "২৪ ঘণ্টা",
+      ],
       ["স্কয়ার হাসপাতাল", "১৮ পান্থপথ, ঢাকা", "০১৭৩০-০০০০০০", "২৪ ঘণ্টা"],
-      ["স্যার সলিমুল্লাহ মেডিকেল কলেজ হাসপাতাল", "১০০ মিটফোর্ড, ঢাকা", "০১৭৩৫-০০০০০০", "২৪ ঘণ্টা"],
+      [
+        "স্যার সলিমুল্লাহ মেডিকেল কলেজ হাসপাতাল",
+        "১০০ মিটফোর্ড, ঢাকা",
+        "০১৭৩৫-০০০০০০",
+        "২৪ ঘণ্টা",
+      ],
     ],
   },
   {
     title: "নিকটস্থ থানা",
     icon: Shield,
     items: [
-      ["ধানমন্ডি থানা", "ধানমন্ডি ৭, ঢাকা", "০১৭৫৫-০০০০০০", "নারী ও শিশু ডেস্ক আছে"],
+      [
+        "ধানমন্ডি থানা",
+        "ধানমন্ডি ৭, ঢাকা",
+        "০১৭৫৫-০০০০০০",
+        "নারী ও শিশু ডেস্ক আছে",
+      ],
       ["রমনা থানা", "রমনা, ঢাকা", "০১৭৪৪-০০০০০০", "নারী ও শিশু ডেস্ক আছে"],
-      ["মিরপুর মডেল থানা", "মিরপুর ১০, ঢাকা", "০১৭৬৬-০০০০০০", "নারী ও শিশু ডেস্ক আছে"],
+      [
+        "মিরপুর মডেল থানা",
+        "মিরপুর ১০, ঢাকা",
+        "০১৭৬৬-০০০০০০",
+        "নারী ও শিশু ডেস্ক আছে",
+      ],
     ],
   },
   {
@@ -163,7 +183,12 @@ const emergencySections = [
     icon: Stethoscope,
     items: [
       ["আশরাফ ফার্মেসি", "মগবাজার, ঢাকা", "০১৭১১-০০০০০০", "২৪ ঘণ্টা"],
-      ["ল্যাবএইড ফার্মেসি", "ধানমন্ডি, ঢাকা", "০১৭১২-০০০০০০", "সকাল ৮টা - রাত ১০টা"],
+      [
+        "ল্যাবএইড ফার্মেসি",
+        "ধানমন্ডি, ঢাকা",
+        "০১৭১২-০০০০০০",
+        "সকাল ৮টা - রাত ১০টা",
+      ],
       ["সেবা ফার্মেসি", "গুলশান, ঢাকা", "০১৭১৩-০০০০০০", "২৪ ঘণ্টা"],
     ],
   },
@@ -171,9 +196,24 @@ const emergencySections = [
     title: "নারী সহায়তা কেন্দ্র",
     icon: Heart,
     items: [
-      ["জাতীয় নারী নির্যাতন প্রতিরোধ সেবা", "ঢাকা", "১০৯", "কাউন্সেলিং ও আইনি সহায়তা"],
-      ["আইন ও সালিশ কেন্দ্র", "লালমাটিয়া, ঢাকা", "০১৭১৪-০০০০০০", "নারী অধিকার ও আইনি সহায়তা"],
-      ["বাংলাদেশ মহিলা পরিষদ", "সেগুনবাগিচা, ঢাকা", "০১৭১৫-০০০০০০", "জরুরি আশ্রয় ও পরামর্শ"],
+      [
+        "জাতীয় নারী নির্যাতন প্রতিরোধ সেবা",
+        "ঢাকা",
+        "১০৯",
+        "কাউন্সেলিং ও আইনি সহায়তা",
+      ],
+      [
+        "আইন ও সালিশ কেন্দ্র",
+        "লালমাটিয়া, ঢাকা",
+        "০১৭১৪-০০০০০০",
+        "নারী অধিকার ও আইনি সহায়তা",
+      ],
+      [
+        "বাংলাদেশ মহিলা পরিষদ",
+        "সেগুনবাগিচা, ঢাকা",
+        "০১৭১৫-০০০০০০",
+        "জরুরি আশ্রয় ও পরামর্শ",
+      ],
       ["কর্তব্য - জরুরি হেল্পলাইন", "টোলফ্রি", "১০৯", "জরুরি সেবা সহায়তা"],
     ],
   },
@@ -327,7 +367,9 @@ function addDays(date: Date, amount: number) {
 }
 
 function diffDays(start: Date, end: Date) {
-  const ms = Date.UTC(end.getFullYear(), end.getMonth(), end.getDate()) - Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+  const ms =
+    Date.UTC(end.getFullYear(), end.getMonth(), end.getDate()) -
+    Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
   return Math.floor(ms / 86400000);
 }
 
@@ -363,7 +405,9 @@ function SectionIntro({
       <h1 className="font-display text-4xl font-bold leading-tight text-[var(--foreground)] md:text-6xl">
         {title}
       </h1>
-      <p className="mt-4 text-base text-[var(--muted)] md:text-lg">{subtitle}</p>
+      <p className="mt-4 text-base text-[var(--muted)] md:text-lg">
+        {subtitle}
+      </p>
     </div>
   );
 }
@@ -394,19 +438,28 @@ export function HomePage() {
       <section className="container-shell grid min-h-[620px] items-center gap-10 py-16 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <p className="mb-5 inline-flex rounded-full border border-[var(--border)] bg-white px-4 py-1 text-sm text-[var(--primary)]">
-            ✦ নারীর স্বাস্থ্য, নারীর ভাষা
+            ✦ নারীর স্বাস্থ্য, নারীর নিরাপত্তা, নারীর ভাষা
           </p>
           <h1 className="font-display max-w-2xl text-5xl font-bold leading-tight md:text-7xl">
-            আপনার ভেতরের <span className="text-[var(--primary)]">শক্তি</span> কে জাগ্রত করুন
+            আপনার ভেতরের <span className="text-[var(--primary)]">শক্তি</span> কে
+            জাগ্রত করুন
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-            বাংলায় AI-চালিত স্বাস্থ্য পরামর্শ, পিরিয়ড ও গর্ভাবস্থা ট্র্যাকিং, ডাক্তারের অ্যাপয়েন্টমেন্ট এবং জরুরি সহায়তা।
+            বাংলায় AI-চালিত স্বাস্থ্য পরামর্শ, পিরিয়ড ও গর্ভাবস্থা ট্র্যাকিং,
+            ডাক্তারের অ্যাপয়েন্টমেন্ট এবং জরুরি সহায়তা।
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link className="focus-ring rounded-full bg-[var(--primary)] px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-[var(--primary-dark)]" href="/advice">
-              বিনামূল্যে শুরু করুন
+            <Link
+              style={{ "color": "white" }}
+              className="focus-ring rounded-full bg-[var(--primary)] px-6 py-3 font-semibold shadow-sm transition hover:bg-[var(--primary-dark)]"
+              href="/emergency"
+            >
+              সহায়তা চান
             </Link>
-            <Link className="focus-ring rounded-full border border-[var(--border)] bg-white px-6 py-3 font-semibold text-[var(--foreground)] transition hover:border-[var(--primary)]" href="/tracker">
+            <Link
+              className="focus-ring rounded-full border border-[var(--border)] bg-white px-6 py-3 font-semibold text-[var(--foreground)] transition hover:border-[var(--primary)]"
+              href="/tracker"
+            >
               পিরিয়ড ট্র্যাক করুন
             </Link>
           </div>
@@ -431,17 +484,27 @@ export function HomePage() {
       <section className="container-shell py-12">
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <h2 className="font-display text-4xl font-bold">আপনার জন্য যা আছে</h2>
-          <p className="mt-2 text-[var(--muted)]">প্রতিটি দিনের জন্য সহজ, নির্ভরযোগ্য বাংলা স্বাস্থ্য সহায়তা।</p>
+          <p className="mt-2 text-[var(--muted)]">
+            প্রতিটি দিনের জন্য সহজ, নির্ভরযোগ্য বাংলা স্বাস্থ্য সহায়তা।
+          </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featureCards.map((card) => (
-            <Link key={card.href} href={card.href} className="group soft-card rounded-lg p-7 transition hover:-translate-y-1 hover:border-[var(--primary)]">
+            <Link
+              key={card.href}
+              href={card.href}
+              className="group soft-card rounded-lg p-7 transition hover:-translate-y-1 hover:border-[var(--primary)]"
+            >
               <span className="mb-6 grid h-12 w-12 place-items-center rounded-xl bg-[var(--primary-soft)] text-[var(--primary)]">
                 <card.icon size={21} />
               </span>
               <h3 className="font-display text-2xl font-bold">{card.title}</h3>
-              <p className="mt-2 min-h-14 leading-7 text-[var(--muted)]">{card.text}</p>
-              <span className="mt-5 inline-block text-sm font-semibold text-[var(--primary)]">আরও জানুন →</span>
+              <p className="mt-2 min-h-14 leading-7 text-[var(--muted)]">
+                {card.text}
+              </p>
+              <span className="mt-5 inline-block text-sm font-semibold text-[var(--primary)]">
+                আরও জানুন →
+              </span>
             </Link>
           ))}
         </div>
@@ -449,10 +512,17 @@ export function HomePage() {
 
       <section className="container-shell py-12">
         <div className="mx-auto max-w-5xl rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[#cf6171] px-6 py-12 text-center text-white shadow-2xl shadow-rose-950/20">
-          <h2 className="font-display text-3xl font-bold md:text-4xl">আজই শুরু হোক আপনার যাত্রা</h2>
-          <p className="mt-3 text-white/90">আপনার প্রশ্ন, আপনার শরীর, আপনার সিদ্ধান্ত - সবকিছু বাংলায়।</p>
-          <Link href="/advice" className="focus-ring mt-8 inline-flex rounded-full bg-white px-7 py-3 font-semibold text-[var(--primary)]">
-            AI-এর সাথে কথা বলুন
+          <h2 className="font-display text-3xl font-bold md:text-4xl">
+            আজই শুরু হোক আপনার যাত্রা
+          </h2>
+          <p className="mt-3 text-white/90">
+            আপনার প্রশ্ন, আপনার শরীর, আপনার সিদ্ধান্ত - সবকিছু বাংলায়।
+          </p>
+          <Link
+            href="/advice"
+            className="focus-ring mt-8 inline-flex rounded-full bg-white px-7 py-3 font-semibold "
+          >
+            <span className="text-[var(--muted)]">AI-এর সাথে কথা বলুন</span>
           </Link>
         </div>
       </section>
@@ -468,7 +538,9 @@ export function TrackerPage() {
   const data = useMemo(() => {
     const start = parseDate(lastPeriod);
     const today = parseDate(todayIso);
-    const dayInCycle = ((diffDays(start, today) % cycleLength) + cycleLength) % cycleLength + 1;
+    const dayInCycle =
+      (((diffDays(start, today) % cycleLength) + cycleLength) % cycleLength) +
+      1;
     const nextPeriod = addDays(start, cycleLength);
     const ovulation = addDays(start, cycleLength - 14);
     const fertileStart = addDays(ovulation, -5);
@@ -482,12 +554,22 @@ export function TrackerPage() {
             ? "ওভুলেশন পর্যায়"
             : "লুটিয়াল পর্যায়";
 
-    return { dayInCycle, nextPeriod, ovulation, fertileStart, fertileEnd, phase };
+    return {
+      dayInCycle,
+      nextPeriod,
+      ovulation,
+      fertileStart,
+      fertileEnd,
+      phase,
+    };
   }, [cycleLength, lastPeriod, periodLength]);
 
   return (
     <section className="container-shell py-12">
-      <SectionIntro title="পিরিয়ড ট্র্যাকার" subtitle="আপনার চক্র জানুন, আপনার শরীর বুঝুন।" />
+      <SectionIntro
+        title="পিরিয়ড ট্র্যাকার"
+        subtitle="আপনার চক্র জানুন, আপনার শরীর বুঝুন।"
+      />
 
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="soft-card rounded-2xl p-8">
@@ -503,7 +585,10 @@ export function TrackerPage() {
           </label>
 
           <label className="mt-6 block text-[var(--muted)]">
-            চক্রের দৈর্ঘ্য: <strong className="text-[var(--primary)]">{bnNumber(cycleLength)} দিন</strong>
+            চক্রের দৈর্ঘ্য:{" "}
+            <strong className="text-[var(--primary)]">
+              {bnNumber(cycleLength)} দিন
+            </strong>
             <input
               className="mt-3 w-full accent-[var(--primary)]"
               type="range"
@@ -515,7 +600,10 @@ export function TrackerPage() {
           </label>
 
           <label className="mt-6 block text-[var(--muted)]">
-            মাসিকের দৈর্ঘ্য: <strong className="text-[var(--primary)]">{bnNumber(periodLength)} দিন</strong>
+            মাসিকের দৈর্ঘ্য:{" "}
+            <strong className="text-[var(--primary)]">
+              {bnNumber(periodLength)} দিন
+            </strong>
             <input
               className="mt-3 w-full accent-[var(--primary)]"
               type="range"
@@ -532,23 +620,43 @@ export function TrackerPage() {
             <Sparkles size={18} /> বর্তমান অবস্থা
           </p>
           <h2 className="font-display mt-2 text-4xl font-bold">{data.phase}</h2>
-          <p className="mt-1 text-white/85">চক্রের দিন {bnNumber(data.dayInCycle)}</p>
+          <p className="mt-1 text-white/85">
+            চক্রের দিন {bnNumber(data.dayInCycle)}
+          </p>
           <div className="mt-8 rounded-xl bg-white/18 p-6">
             <p className="text-white/85">পরবর্তী মাসিক</p>
-            <p className="font-display mt-2 text-3xl font-bold">{bnDate(data.nextPeriod)}</p>
-            <p className="mt-1 text-sm text-white/85">আরও {bnNumber(Math.max(diffDays(parseDate(todayIso), data.nextPeriod), 0))} দিন বাকি</p>
+            <p className="font-display mt-2 text-3xl font-bold">
+              {bnDate(data.nextPeriod)}
+            </p>
+            <p className="mt-1 text-sm text-white/85">
+              আরও{" "}
+              {bnNumber(
+                Math.max(diffDays(parseDate(todayIso), data.nextPeriod), 0),
+              )}{" "}
+              দিন বাকি
+            </p>
           </div>
         </div>
       </div>
 
       <div className="mt-8 grid gap-6 md:grid-cols-3">
-        <IconTile icon={Droplet} title="উর্বর সময়" text={`${bnDate(data.fertileStart)} – ${bnDate(data.fertileEnd)}`} />
+        <IconTile
+          icon={Droplet}
+          title="উর্বর সময়"
+          text={`${bnDate(data.fertileStart)} – ${bnDate(data.fertileEnd)}`}
+        />
         <IconTile icon={Heart} title="ওভুলেশন" text={bnDate(data.ovulation)} />
-        <IconTile icon={Calendar} title="চক্র দৈর্ঘ্য" text={`${bnNumber(cycleLength)} দিন`} />
+        <IconTile
+          icon={Calendar}
+          title="চক্র দৈর্ঘ্য"
+          text={`${bnNumber(cycleLength)} দিন`}
+        />
       </div>
 
       <p className="mt-8 rounded-2xl border border-[var(--border)] bg-[#fff0e9] p-5 leading-7 text-[var(--muted)]">
-        <strong className="text-[var(--foreground)]">দ্রষ্টব্য:</strong> এই অনুমান সাধারণ গণনার উপর ভিত্তি করে। অনিয়মিত মাসিক, ব্যথা বা অতিরিক্ত রক্তপাত হলে চিকিৎসকের পরামর্শ নিন।
+        <strong className="text-[var(--foreground)]">দ্রষ্টব্য:</strong> এই
+        অনুমান সাধারণ গণনার উপর ভিত্তি করে। অনিয়মিত মাসিক, ব্যথা বা অতিরিক্ত
+        রক্তপাত হলে চিকিৎসকের পরামর্শ নিন।
       </p>
     </section>
   );
@@ -565,14 +673,32 @@ export function PregnancyPage() {
     const day = days % 7;
     const edd = addDays(start, 280);
     const progress = Math.min((days / 280) * 100, 100);
-    const size = week < 8 ? "শিমের দানার সমান" : week < 12 ? "বরই-এর সমান" : week < 20 ? "আমের সমান" : week < 30 ? "নারিকেলের সমান" : "তরমুজের সমান";
-    const advice = week < 13 ? "ফলিক অ্যাসিড, পানি ও বিশ্রামে মন দিন।" : week < 28 ? "শিশুর নড়াচড়া, আয়রন ও ক্যালসিয়ামের দিকে খেয়াল রাখুন।" : "প্রসব পরিকল্পনা, হাসপাতাল ব্যাগ ও জরুরি যোগাযোগ প্রস্তুত রাখুন।";
+    const size =
+      week < 8
+        ? "শিমের দানার সমান"
+        : week < 12
+          ? "বরই-এর সমান"
+          : week < 20
+            ? "আমের সমান"
+            : week < 30
+              ? "নারিকেলের সমান"
+              : "তরমুজের সমান";
+    const advice =
+      week < 13
+        ? "ফলিক অ্যাসিড, পানি ও বিশ্রামে মন দিন।"
+        : week < 28
+          ? "শিশুর নড়াচড়া, আয়রন ও ক্যালসিয়ামের দিকে খেয়াল রাখুন।"
+          : "প্রসব পরিকল্পনা, হাসপাতাল ব্যাগ ও জরুরি যোগাযোগ প্রস্তুত রাখুন।";
     return { week, day, edd, progress, size, advice };
   }, [lmp]);
 
   return (
     <section className="container-shell py-12">
-      <SectionIntro eyebrow="গর্ভাবস্থা ট্র্যাকার" title="আপনার গর্ভাবস্থার যাত্রা" subtitle="শেষ মাসিকের তারিখ দিন, প্রতি সপ্তাহের তথ্য জানুন।" />
+      <SectionIntro
+        eyebrow="গর্ভাবস্থা ট্র্যাকার"
+        title="আপনার গর্ভাবস্থার যাত্রা"
+        subtitle="শেষ মাসিকের তারিখ দিন, প্রতি সপ্তাহের তথ্য জানুন।"
+      />
 
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="soft-card rounded-2xl p-8">
@@ -587,9 +713,19 @@ export function PregnancyPage() {
             />
           </label>
           <div className="mt-6 rounded-xl bg-[#fff0e9] p-5">
-            <p className="text-[var(--muted)]">প্রত্যাশিত প্রসবের তারিখ (EDD)</p>
-            <p className="font-display mt-2 text-3xl font-bold">{bnDate(pregnancy.edd)}</p>
-            <p className="mt-1 text-sm text-[var(--muted)]">আরও প্রায় {bnNumber(Math.max(diffDays(parseDate(todayIso), pregnancy.edd), 0))} দিন বাকি</p>
+            <p className="text-[var(--muted)]">
+              প্রত্যাশিত প্রসবের তারিখ (EDD)
+            </p>
+            <p className="font-display mt-2 text-3xl font-bold">
+              {bnDate(pregnancy.edd)}
+            </p>
+            <p className="mt-1 text-sm text-[var(--muted)]">
+              আরও প্রায়{" "}
+              {bnNumber(
+                Math.max(diffDays(parseDate(todayIso), pregnancy.edd), 0),
+              )}{" "}
+              দিন বাকি
+            </p>
           </div>
         </div>
 
@@ -597,17 +733,29 @@ export function PregnancyPage() {
           <p className="flex items-center gap-2 text-sm font-semibold text-white/90">
             <Sparkles size={18} /> বর্তমান অবস্থা
           </p>
-          <h2 className="font-display mt-2 text-4xl font-bold">সপ্তাহ {bnNumber(pregnancy.week)}</h2>
-          <p className="mt-1 text-white/85">দিন {bnNumber(pregnancy.day)} · ট্রাইমেস্টার {bnNumber(pregnancy.week < 13 ? 1 : pregnancy.week < 28 ? 2 : 3)}</p>
+          <h2 className="font-display mt-2 text-4xl font-bold">
+            সপ্তাহ {bnNumber(pregnancy.week)}
+          </h2>
+          <p className="mt-1 text-white/85">
+            দিন {bnNumber(pregnancy.day)} · ট্রাইমেস্টার{" "}
+            {bnNumber(pregnancy.week < 13 ? 1 : pregnancy.week < 28 ? 2 : 3)}
+          </p>
           <div className="mt-7 h-2 overflow-hidden rounded-full bg-white/25">
-            <span className="block h-full rounded-full bg-white" style={{ width: `${pregnancy.progress}%` }} />
+            <span
+              className="block h-full rounded-full bg-white"
+              style={{ width: `${pregnancy.progress}%` }}
+            />
           </div>
-          <p className="mt-2 text-sm text-white/85">{bnNumber(Math.round(pregnancy.progress))}% সম্পন্ন</p>
+          <p className="mt-2 text-sm text-white/85">
+            {bnNumber(Math.round(pregnancy.progress))}% সম্পন্ন
+          </p>
           <div className="mt-8 rounded-xl bg-white/18 p-5">
             <p className="flex items-center gap-2 text-white/85">
               <Baby size={18} /> শিশুর আকার
             </p>
-            <p className="font-display mt-2 text-3xl font-bold">{pregnancy.size}</p>
+            <p className="font-display mt-2 text-3xl font-bold">
+              {pregnancy.size}
+            </p>
           </div>
         </div>
       </div>
@@ -615,11 +763,17 @@ export function PregnancyPage() {
       <div className="mt-8 grid gap-6 md:grid-cols-3">
         <IconTile icon={Baby} title="এই সপ্তাহে" text={pregnancy.size} />
         <IconTile icon={Heart} title="মায়ের জন্য" text={pregnancy.advice} />
-        <IconTile icon={Calendar} title="পরামর্শ" text="নিয়মিত চেকআপ ও প্রয়োজনীয় টিকা নিয়ে চিকিৎসকের সাথে কথা বলুন।" />
+        <IconTile
+          icon={Calendar}
+          title="পরামর্শ"
+          text="নিয়মিত চেকআপ ও প্রয়োজনীয় টিকা নিয়ে চিকিৎসকের সাথে কথা বলুন।"
+        />
       </div>
 
       <p className="mt-8 rounded-2xl border border-[var(--border)] bg-[#fff0e9] p-5 leading-7 text-[var(--muted)]">
-        <strong className="text-[var(--foreground)]">দ্রষ্টব্য:</strong> এই পেজ LMP-এর উপর ভিত্তি করে আনুমানিক তথ্য দেয়। সঠিক তথ্যের জন্য চিকিৎসকের পরামর্শ নিন।
+        <strong className="text-[var(--foreground)]">দ্রষ্টব্য:</strong> এই পেজ
+        LMP-এর উপর ভিত্তি করে আনুমানিক তথ্য দেয়। সঠিক তথ্যের জন্য চিকিৎসকের
+        পরামর্শ নিন।
       </p>
     </section>
   );
@@ -628,10 +782,18 @@ export function PregnancyPage() {
 export function HealthPage() {
   return (
     <section className="container-shell py-12">
-      <SectionIntro title="সম্পূর্ণ স্বাস্থ্যসেবা" subtitle="শরীর ও মনের প্রতিটি দিকের জন্য বাংলায় তৈরি নির্দেশিকা।" />
+      <SectionIntro
+        title="সম্পূর্ণ স্বাস্থ্যসেবা"
+        subtitle="শরীর ও মনের প্রতিটি দিকের জন্য বাংলায় তৈরি নির্দেশিকা।"
+      />
       <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
         {healthCards.map((card) => (
-          <IconTile key={card.title} icon={card.icon} title={card.title} text={card.text} />
+          <IconTile
+            key={card.title}
+            icon={card.icon}
+            title={card.title}
+            text={card.text}
+          />
         ))}
       </div>
     </section>
@@ -659,7 +821,7 @@ export function AdvicePage() {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      text: "নমস্কার! আমি শক্তি - আপনার AI স্বাস্থ্য সঙ্গী। বাংলায় যেকোনো স্বাস্থ্য প্রশ্ন করুন, আমি সহায়তা করব।",
+      text: "আদাব! আমি শক্তি - আপনার AI স্বাস্থ্য সঙ্গী। বাংলায় যেকোনো স্বাস্থ্য প্রশ্ন করুন, আমি সহায়তা করব।",
     },
   ]);
   const [question, setQuestion] = useState("");
@@ -668,37 +830,61 @@ export function AdvicePage() {
     event?.preventDefault();
     const clean = question.trim();
     if (!clean) return;
-    setMessages((items) => [...items, { role: "user", text: clean }, { role: "assistant", text: answerFor(clean) }]);
+    setMessages((items) => [
+      ...items,
+      { role: "user", text: clean },
+      { role: "assistant", text: answerFor(clean) },
+    ]);
     setQuestion("");
   }
 
   function askQuick(value: string) {
     setQuestion(value);
-    setMessages((items) => [...items, { role: "user", text: value }, { role: "assistant", text: answerFor(value) }]);
+    setMessages((items) => [
+      ...items,
+      { role: "user", text: value },
+      { role: "assistant", text: answerFor(value) },
+    ]);
   }
 
   return (
     <section className="container-shell py-12">
-      <SectionIntro eyebrow="AI চালিত · বাংলা" title="AI পরামর্শ" subtitle="আপনার প্রশ্ন গোপনীয়। নির্ভয়ে জিজ্ঞেস করুন।" />
+      <SectionIntro
+        eyebrow="AI চালিত · বাংলা"
+        title="AI পরামর্শ"
+        subtitle="আপনার প্রশ্ন গোপনীয়। নির্ভয়ে জিজ্ঞেস করুন।"
+      />
 
       <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-white">
         <div className="max-h-[420px] space-y-4 overflow-y-auto p-5">
           {messages.map((message, index) => (
-            <div key={`${message.role}-${index}`} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
-              <p className={`max-w-[78%] rounded-2xl px-5 py-4 leading-7 ${message.role === "user" ? "bg-[var(--primary)] text-white" : "bg-[var(--primary-soft)] text-[var(--foreground)]"}`}>
+            <div
+              key={`${message.role}-${index}`}
+              className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
+            >
+              <p
+                className={`max-w-[78%] rounded-2xl px-5 py-4 leading-7 ${message.role === "user" ? "bg-[var(--primary)] text-white" : "bg-[var(--primary-soft)] text-[var(--foreground)]"}`}
+              >
                 {message.text}
               </p>
             </div>
           ))}
         </div>
-        <form onSubmit={submit} className="flex gap-3 border-t border-[var(--border)] p-4">
+        <form
+          onSubmit={submit}
+          className="flex gap-3 border-t border-[var(--border)] p-4"
+        >
           <input
             className="focus-ring min-w-0 flex-1 rounded-full border border-[var(--border)] bg-[var(--background)] px-5 py-3"
             value={question}
             onChange={(event) => setQuestion(event.target.value)}
             placeholder="আপনার প্রশ্ন লিখুন..."
           />
-          <button className="focus-ring grid h-12 w-12 place-items-center rounded-full bg-[var(--primary)] text-white transition hover:bg-[var(--primary-dark)]" type="submit" aria-label="পাঠান">
+          <button
+            className="focus-ring grid h-12 w-12 place-items-center rounded-full bg-[var(--primary)] text-white transition hover:bg-[var(--primary-dark)]"
+            type="submit"
+            aria-label="পাঠান"
+          >
             <Send size={20} />
           </button>
         </form>
@@ -707,8 +893,18 @@ export function AdvicePage() {
       <div className="mx-auto mt-6 max-w-4xl">
         <p className="mb-3 text-sm text-[var(--muted)]">দ্রুত শুরু করুন:</p>
         <div className="flex flex-wrap gap-2">
-          {["মাসিকের সময় পেটে ব্যথা কমাবো কীভাবে?", "PCOS-এর লক্ষণ কী কী?", "গর্ভাবস্থায় কোন খাবার উপকারী?", "মানসিক চাপ কমানোর উপায়?"].map((item) => (
-            <button key={item} onClick={() => askQuick(item)} className="focus-ring rounded-full border border-[var(--border)] bg-white px-4 py-2 text-sm transition hover:border-[var(--primary)]" type="button">
+          {[
+            "মাসিকের সময় পেটে ব্যথা কমাবো কীভাবে?",
+            "PCOS-এর লক্ষণ কী কী?",
+            "গর্ভাবস্থায় কোন খাবার উপকারী?",
+            "মানসিক চাপ কমানোর উপায়?",
+          ].map((item) => (
+            <button
+              key={item}
+              onClick={() => askQuick(item)}
+              className="focus-ring rounded-full border border-[var(--border)] bg-white px-4 py-2 text-sm transition hover:border-[var(--primary)]"
+              type="button"
+            >
               {item}
             </button>
           ))}
@@ -724,20 +920,35 @@ export function BookingPage() {
   const [time, setTime] = useState(timeOptions[0]);
   const [confirmed, setConfirmed] = useState("");
 
-  const dateOptions = useMemo(() => Array.from({ length: 10 }, (_, index) => addDays(parseDate(todayIso), index)), []);
+  const dateOptions = useMemo(
+    () =>
+      Array.from({ length: 10 }, (_, index) =>
+        addDays(parseDate(todayIso), index),
+      ),
+    [],
+  );
 
   function book(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const name = String(form.get("name") || "আপনি");
-    setConfirmed(`${name}, আপনার ${service} বুকিং ${bnDate(parseDate(date))} ${time}-এ নিশ্চিত হয়েছে।`);
+    setConfirmed(
+      `${name}, আপনার ${service} বুকিং ${bnDate(parseDate(date))} ${time}-এ নিশ্চিত হয়েছে।`,
+    );
   }
 
   return (
     <section className="container-shell py-12">
-      <SectionIntro eyebrow="অনলাইন বুকিং" title="অ্যাপয়েন্টমেন্ট বুক করুন" subtitle="সময় বেছে দিন, বিশেষজ্ঞের পরামর্শ পান বাংলায়।" />
+      <SectionIntro
+        eyebrow="অনলাইন বুকিং"
+        title="অ্যাপয়েন্টমেন্ট বুক করুন"
+        subtitle="সময় বেছে দিন, বিশেষজ্ঞের পরামর্শ পান বাংলায়।"
+      />
 
-      <form onSubmit={book} className="soft-card mx-auto max-w-5xl rounded-2xl p-7 md:p-9">
+      <form
+        onSubmit={book}
+        className="soft-card mx-auto max-w-5xl rounded-2xl p-7 md:p-9"
+      >
         <h2 className="mb-5 flex items-center gap-2 font-display text-2xl font-bold">
           <Stethoscope size={22} color={primary} /> পরিষেবা নির্বাচন করুন
         </h2>
@@ -748,7 +959,9 @@ export function BookingPage() {
               type="button"
               onClick={() => setService(item)}
               className={`focus-ring rounded-xl border px-4 py-3 text-left transition ${
-                service === item ? "border-[var(--primary)] bg-white font-semibold text-[var(--primary)]" : "border-[var(--border)] bg-[var(--background)]"
+                service === item
+                  ? "border-[var(--primary)] bg-white font-semibold text-[var(--primary)]"
+                  : "border-[var(--border)] bg-[var(--background)]"
               }`}
             >
               {item}
@@ -768,12 +981,24 @@ export function BookingPage() {
                 type="button"
                 onClick={() => setDate(value)}
                 className={`focus-ring min-w-24 rounded-xl border px-4 py-3 text-center transition ${
-                  date === value ? "border-[var(--primary)] bg-[var(--primary)] text-white" : "border-[var(--border)] bg-[var(--background)]"
+                  date === value
+                    ? "border-[var(--primary)] bg-[var(--primary)] text-white"
+                    : "border-[var(--border)] bg-[var(--background)]"
                 }`}
               >
-                <span className="block text-sm">{new Intl.DateTimeFormat("bn-BD", { weekday: "short" }).format(item)}</span>
-                <span className="block font-display text-2xl font-bold">{bnNumber(item.getDate())}</span>
-                <span className="block text-sm">{new Intl.DateTimeFormat("bn-BD", { month: "short" }).format(item)}</span>
+                <span className="block text-sm">
+                  {new Intl.DateTimeFormat("bn-BD", {
+                    weekday: "short",
+                  }).format(item)}
+                </span>
+                <span className="block font-display text-2xl font-bold">
+                  {bnNumber(item.getDate())}
+                </span>
+                <span className="block text-sm">
+                  {new Intl.DateTimeFormat("bn-BD", { month: "short" }).format(
+                    item,
+                  )}
+                </span>
               </button>
             );
           })}
@@ -789,7 +1014,9 @@ export function BookingPage() {
               type="button"
               onClick={() => setTime(item)}
               className={`focus-ring rounded-lg border px-4 py-3 transition ${
-                time === item ? "border-[var(--primary)] bg-[var(--primary-soft)] font-semibold text-[var(--primary)]" : "border-[var(--border)] bg-[var(--background)]"
+                time === item
+                  ? "border-[var(--primary)] bg-[var(--primary-soft)] font-semibold text-[var(--primary)]"
+                  : "border-[var(--border)] bg-[var(--background)]"
               }`}
             >
               {item}
@@ -800,23 +1027,45 @@ export function BookingPage() {
         <div className="mt-9 grid gap-5 md:grid-cols-2">
           <label className="block text-sm text-[var(--muted)]">
             পূর্ণ নাম
-            <input name="name" required className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]" placeholder="আপনার নাম" />
+            <input
+              name="name"
+              required
+              className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+              placeholder="আপনার নাম"
+            />
           </label>
           <label className="block text-sm text-[var(--muted)]">
             ফোন নম্বর
-            <input name="phone" required className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]" placeholder="+৮৮০ ১XXX XXXXXX" />
+            <input
+              name="phone"
+              required
+              className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+              placeholder="+৮৮০ ১XXX XXXXXX"
+            />
           </label>
           <label className="block text-sm text-[var(--muted)] md:col-span-2">
             ইমেইল (ঐচ্ছিক)
-            <input name="email" type="email" className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]" placeholder="you@example.com" />
+            <input
+              name="email"
+              type="email"
+              className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+              placeholder="you@example.com"
+            />
           </label>
           <label className="block text-sm text-[var(--muted)] md:col-span-2">
             অতিরিক্ত তথ্য (ঐচ্ছিক)
-            <textarea name="notes" className="focus-ring mt-2 min-h-28 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]" placeholder="আপনার সমস্যা বা প্রশ্ন সংক্ষেপে লিখুন..." />
+            <textarea
+              name="notes"
+              className="focus-ring mt-2 min-h-28 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+              placeholder="আপনার সমস্যা বা প্রশ্ন সংক্ষেপে লিখুন..."
+            />
           </label>
         </div>
 
-        <button className="focus-ring mt-8 w-full rounded-full bg-[var(--primary)] px-6 py-4 font-semibold text-white transition hover:bg-[var(--primary-dark)]" type="submit">
+        <button
+          className="focus-ring mt-8 w-full rounded-full bg-[var(--primary)] px-6 py-4 font-semibold text-white transition hover:bg-[var(--primary-dark)]"
+          type="submit"
+        >
           বুকিং নিশ্চিত করুন
         </button>
         {confirmed ? (
@@ -843,17 +1092,26 @@ export function EmergencyPage() {
 
   const nearestFacilities = useMemo(() => {
     const origin = userLocation ?? defaultDhakaLocation;
-    const categories: NearbyFacility["category"][] = ["hospital", "police", "help", "pharmacy"];
+    const categories: NearbyFacility["category"][] = [
+      "hospital",
+      "police",
+      "help",
+      "pharmacy",
+    ];
 
     return categories
-      .map((category) =>
-        nearbyFacilities
-          .filter((facility) => facility.category === category)
-          .map((facility) => ({
-            ...facility,
-            distance: distanceKm(origin, { lat: facility.lat, lng: facility.lng }),
-          }))
-          .sort((a, b) => a.distance - b.distance)[0],
+      .map(
+        (category) =>
+          nearbyFacilities
+            .filter((facility) => facility.category === category)
+            .map((facility) => ({
+              ...facility,
+              distance: distanceKm(origin, {
+                lat: facility.lat,
+                lng: facility.lng,
+              }),
+            }))
+            .sort((a, b) => a.distance - b.distance)[0],
       )
       .filter(Boolean);
   }, [userLocation]);
@@ -911,7 +1169,14 @@ export function EmergencyPage() {
 
   function openSosPanel() {
     setSosOpen(true);
-    window.setTimeout(() => sosPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    window.setTimeout(
+      () =>
+        sosPanelRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        }),
+      80,
+    );
   }
 
   function startLocationTracking() {
@@ -933,10 +1198,14 @@ export function EmergencyPage() {
           lng: position.coords.longitude,
         });
         setAccuracy(position.coords.accuracy);
-        setLocationStatus("লাইভ লোকেশন চালু আছে। কাছের সেবাগুলো আপনার অবস্থান অনুযায়ী সাজানো হয়েছে।");
+        setLocationStatus(
+          "লাইভ লোকেশন চালু আছে। কাছের সেবাগুলো আপনার অবস্থান অনুযায়ী সাজানো হয়েছে।",
+        );
       },
       () => {
-        setLocationStatus("লোকেশন চালু করা যায়নি। ব্রাউজার থেকে লোকেশন অনুমতি দিন অথবা নিচের জরুরি নম্বরে কল করুন।");
+        setLocationStatus(
+          "লোকেশন চালু করা যায়নি। ব্রাউজার থেকে লোকেশন অনুমতি দিন অথবা নিচের জরুরি নম্বরে কল করুন।",
+        );
       },
       {
         enableHighAccuracy: true,
@@ -951,17 +1220,26 @@ export function EmergencyPage() {
       navigator.geolocation.clearWatch(watchIdRef.current);
       watchIdRef.current = null;
     }
-    setLocationStatus("লাইভ লোকেশন বন্ধ আছে। আবার চালু করলে কাছের সেবা আপডেট হবে।");
+    setLocationStatus(
+      "লাইভ লোকেশন বন্ধ আছে। আবার চালু করলে কাছের সেবা আপডেট হবে।",
+    );
   }
 
   return (
     <section className="container-shell py-12">
-      <SectionIntro title="নিরাপত্তা ও জরুরি সেবা" subtitle="আপনার এলাকার হাসপাতাল, থানা, ফার্মেসি ও সহায়তা কেন্দ্রের তথ্য।" />
+      <SectionIntro
+        title="নিরাপত্তা ও জরুরি সেবা"
+        subtitle="আপনার এলাকার হাসপাতাল, থানা, ফার্মেসি ও সহায়তা কেন্দ্রের তথ্য।"
+      />
 
       <div className="relative mb-10 text-center">
         <div className="mb-4 flex flex-wrap justify-center gap-3 text-sm text-[var(--primary)]">
-          <span className="rounded-full bg-[var(--primary-soft)] px-4 py-2">জাতীয় জরুরি সেবা: ৯৯৯</span>
-          <span className="rounded-full bg-[var(--primary-soft)] px-4 py-2">নারী সহায়তা হটলাইন: ১০৯</span>
+          <span className="rounded-full bg-[var(--primary-soft)] px-4 py-2">
+            জাতীয় জরুরি সেবা: ৯৯৯
+          </span>
+          <span className="rounded-full bg-[var(--primary-soft)] px-4 py-2">
+            নারী সহায়তা হটলাইন: ১০৯
+          </span>
         </div>
         <button
           className="focus-ring mx-auto grid h-36 w-36 place-items-center rounded-full border-4 border-white bg-red-600 text-center font-bold text-white shadow-xl shadow-red-900/20 transition-colors hover:bg-red-700"
@@ -982,7 +1260,9 @@ export function EmergencyPage() {
           ref={sosPanelRef}
           className="mx-auto mb-10 max-w-3xl rounded-2xl border border-red-200 bg-red-50/70 p-5 shadow-xl shadow-red-950/10 sm:p-8"
         >
-          <h2 className="text-center font-display text-3xl font-bold text-red-600">জরুরি নম্বর</h2>
+          <h2 className="text-center font-display text-3xl font-bold text-red-600">
+            জরুরি নম্বর
+          </h2>
           <div className="mt-6 grid gap-4">
             {[
               ["৯৯৯", "জাতীয় জরুরি সেবা"],
@@ -1009,12 +1289,16 @@ export function EmergencyPage() {
               <Navigation size={22} className="text-red-600" />
               আমার লোকেশন ব্যবহার করুন
             </h3>
-            <p className="mt-2 leading-7 text-[var(--muted)]">{locationStatus}</p>
+            <p className="mt-2 leading-7 text-[var(--muted)]">
+              {locationStatus}
+            </p>
             {userLocation ? (
               <div className="mt-4 grid gap-2 rounded-xl bg-[#fff0e9] p-4 text-sm text-[var(--muted)] sm:grid-cols-2">
                 <span>অক্ষাংশ: {userLocation.lat.toFixed(5)}</span>
                 <span>দ্রাঘিমাংশ: {userLocation.lng.toFixed(5)}</span>
-                <span className="sm:col-span-2">নির্ভুলতা: প্রায় {bnNumber(Math.round(accuracy ?? 0))} মিটার</span>
+                <span className="sm:col-span-2">
+                  নির্ভুলতা: প্রায় {bnNumber(Math.round(accuracy ?? 0))} মিটার
+                </span>
               </div>
             ) : null}
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -1039,9 +1323,13 @@ export function EmergencyPage() {
           <div className="mt-6 overflow-hidden rounded-2xl border border-red-100 bg-white">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-red-100 px-5 py-4">
               <div>
-                <h3 className="font-display text-2xl font-bold">লাইভ জরুরি ম্যাপ</h3>
+                <h3 className="font-display text-2xl font-bold">
+                  লাইভ জরুরি ম্যাপ
+                </h3>
                 <p className="mt-1 text-sm text-[var(--muted)]">
-                  {userLocation ? "আপনার অবস্থান এবং কাছের সেবাগুলো দেখানো হচ্ছে।" : "লোকেশন চালু না থাকলে আনুমানিক ঢাকা কেন্দ্র ধরে ম্যাপ দেখানো হচ্ছে।"}
+                  {userLocation
+                    ? "আপনার অবস্থান এবং কাছের সেবাগুলো দেখানো হচ্ছে।"
+                    : "লোকেশন চালু না থাকলে আনুমানিক ঢাকা কেন্দ্র ধরে ম্যাপ দেখানো হচ্ছে।"}
                 </p>
               </div>
               <a
@@ -1068,13 +1356,21 @@ export function EmergencyPage() {
                     target="_blank"
                     rel="noreferrer"
                     className={`focus-ring absolute z-10 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full px-3 py-2 text-xs font-bold shadow-lg ${
-                      isUser ? "red-action-link bg-red-600" : "bg-white text-[var(--foreground)]"
+                      isUser
+                        ? "red-action-link bg-red-600"
+                        : "bg-white text-[var(--foreground)]"
                     }`}
-                    style={{ color: isUser ? "#ffffff" : undefined, left: `${point.x}%`, top: `${point.y}%` }}
+                    style={{
+                      color: isUser ? "#ffffff" : undefined,
+                      left: `${point.x}%`,
+                      top: `${point.y}%`,
+                    }}
                     title={point.name}
                   >
                     <Icon size={15} />
-                    <span className="max-w-28 truncate">{isUser ? "আপনি" : point.categoryLabel}</span>
+                    <span className="max-w-28 truncate">
+                      {isUser ? "আপনি" : point.categoryLabel}
+                    </span>
                   </a>
                 );
               })}
@@ -1088,10 +1384,15 @@ export function EmergencyPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span className="font-semibold text-[var(--primary)]">{facility.categoryLabel}</span>
-                  <span className="mt-1 block font-semibold">{facility.name}</span>
+                  <span className="font-semibold text-[var(--primary)]">
+                    {facility.categoryLabel}
+                  </span>
+                  <span className="mt-1 block font-semibold">
+                    {facility.name}
+                  </span>
                   <span className="mt-1 block text-[var(--muted)]">
-                    ম্যাপে দেখুন · প্রায় {bnNumber(Number(facility.distance.toFixed(1)))} কিমি
+                    ম্যাপে দেখুন · প্রায়{" "}
+                    {bnNumber(Number(facility.distance.toFixed(1)))} কিমি
                   </span>
                 </a>
               ))}
@@ -1099,7 +1400,9 @@ export function EmergencyPage() {
           </div>
 
           <div className="mt-6">
-            <h3 className="font-display text-2xl font-bold">নিকটস্থ জরুরি সেবা</h3>
+            <h3 className="font-display text-2xl font-bold">
+              নিকটস্থ জরুরি সেবা
+            </h3>
             <p className="mt-1 text-sm text-[var(--muted)]">
               {userLocation
                 ? "আপনার লাইভ লোকেশন অনুযায়ী সাজানো।"
@@ -1107,13 +1410,18 @@ export function EmergencyPage() {
             </p>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
               {nearestFacilities.map((facility) => (
-                <div key={`${facility.category}-${facility.name}`} className="rounded-xl border border-[var(--border)] bg-white p-5">
+                <div
+                  key={`${facility.category}-${facility.name}`}
+                  className="rounded-xl border border-[var(--border)] bg-white p-5"
+                >
                   <div className="flex items-start gap-3">
                     <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[var(--primary-soft)] text-[var(--primary)]">
                       <facility.icon size={20} />
                     </span>
                     <div>
-                      <p className="text-sm font-semibold text-[var(--primary)]">{facility.categoryLabel}</p>
+                      <p className="text-sm font-semibold text-[var(--primary)]">
+                        {facility.categoryLabel}
+                      </p>
                       <h4 className="font-semibold">{facility.name}</h4>
                     </div>
                   </div>
@@ -1124,7 +1432,8 @@ export function EmergencyPage() {
                     <Clock size={15} /> {facility.hours}
                   </p>
                   <p className="mt-2 text-sm font-semibold text-[var(--primary)]">
-                    দূরত্ব প্রায় {bnNumber(Number(facility.distance.toFixed(1)))} কিমি
+                    দূরত্ব প্রায়{" "}
+                    {bnNumber(Number(facility.distance.toFixed(1)))} কিমি
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     <a
@@ -1176,19 +1485,33 @@ export function EmergencyPage() {
             </h2>
             <div className="space-y-4">
               {section.items.map(([name, address, phone, hours]) => (
-                <div key={`${section.title}-${name}`} className="rounded-lg border border-[var(--border)] bg-[#fff0e9] p-5">
+                <div
+                  key={`${section.title}-${name}`}
+                  className="rounded-lg border border-[var(--border)] bg-[#fff0e9] p-5"
+                >
                   <h3 className="font-semibold">{name}</h3>
                   <p className="mt-2 flex items-center gap-2 text-sm text-[var(--muted)]">
                     <MapPin size={15} /> {address}
                   </p>
                   <p className="mt-2 flex items-center gap-2 text-sm text-[var(--muted)]">
-                    <Phone size={15} /> <a className="underline-offset-4 hover:underline" href={`tel:${phone}`}>{phone}</a>
+                    <Phone size={15} />{" "}
+                    <a
+                      className="underline-offset-4 hover:underline"
+                      href={`tel:${phone}`}
+                    >
+                      {phone}
+                    </a>
                   </p>
                   <p className="mt-2 flex items-center gap-2 text-sm text-[var(--muted)]">
                     <Clock size={15} /> {hours}
                   </p>
-                  <button className="focus-ring mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--primary)]" type="button" onClick={() => copyNumber(phone)}>
-                    <Copy size={13} /> {copied === phone ? "কপি হয়েছে" : "নম্বর কপি"}
+                  <button
+                    className="focus-ring mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--primary)]"
+                    type="button"
+                    onClick={() => copyNumber(phone)}
+                  >
+                    <Copy size={13} />{" "}
+                    {copied === phone ? "কপি হয়েছে" : "নম্বর কপি"}
                   </button>
                 </div>
               ))}
@@ -1198,8 +1521,12 @@ export function EmergencyPage() {
       </div>
 
       <p className="mt-8 flex items-start gap-3 rounded-2xl border border-[var(--border)] bg-[#fff0e9] p-5 leading-7 text-[var(--muted)]">
-        <AlertCircle className="mt-1 shrink-0 text-[var(--primary)]" size={20} />
-        জীবনঝুঁকি, সহিংসতা বা গুরুতর অসুস্থতার ক্ষেত্রে অপেক্ষা না করে ৯৯৯-এ কল করুন।
+        <AlertCircle
+          className="mt-1 shrink-0 text-[var(--primary)]"
+          size={20}
+        />
+        জীবনঝুঁকি, সহিংসতা বা গুরুতর অসুস্থতার ক্ষেত্রে অপেক্ষা না করে ৯৯৯-এ কল
+        করুন।
       </p>
     </section>
   );

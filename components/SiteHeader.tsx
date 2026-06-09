@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
+import Logo from "@/public/Logo.jpg";
 
 const nav = [
   { href: "/", label: "হোম" },
@@ -23,8 +25,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[rgba(255,248,244,0.9)] backdrop-blur">
       <div className="container-shell flex h-16 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-[var(--primary)] text-lg font-bold text-white">
-            শ
+          <span className="grid h-9 w-9 place-items-center rounded-full bg-[#471C26] overflow-hidden text-lg font-bold text-white">
+            <Image src={Logo} alt="শক্তি" className="content-center" />
           </span>
           <span className="font-display text-2xl font-bold leading-none">শক্তি</span>
         </Link>
@@ -46,7 +48,8 @@ export function SiteHeader() {
           })}
           <Link
             href="/advice"
-            className="focus-ring rounded-full bg-[var(--primary)] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[var(--primary-dark)]"
+            style={{"color" : "white"}}
+            className="focus-ring rounded-full bg-[var(--primary)] px-5 py-2 text-sm font-semibold shadow-sm transition hover:bg-[var(--primary-dark)]"
           >
             শুরু করুন
           </Link>
