@@ -12,7 +12,8 @@ const nav = [
   { href: "/tracker", label: "পিরিয়ড ট্র্যাকার" },
   { href: "/pregnancy", label: "গর্ভাবস্থা" },
   { href: "/health", label: "স্বাস্থ্য" },
-  { href: "/advice", label: "AI পরামর্শ" },
+  { href: "/subsidy", label: "ভর্তুকি" },
+  { href: "/advice", label: "AI স্বাস্থ্য সহায়তা" },
   { href: "/booking", label: "অ্যাপয়েন্টমেন্ট" },
   { href: "/emergency", label: "নিরাপত্তা" },
 ];
@@ -31,7 +32,7 @@ export function SiteHeader() {
           <span className="font-display text-2xl font-bold leading-none">শক্তি</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-5 lg:flex">
           {nav.map((item) => {
             const active = pathname === item.href;
             return (
@@ -47,11 +48,11 @@ export function SiteHeader() {
             );
           })}
           <Link
-            href="/advice"
-            style={{"color" : "white"}}
+            href="/register"
+            style={{ color: "white" }}
             className="focus-ring rounded-full bg-[var(--primary)] px-5 py-2 text-sm font-semibold shadow-sm transition hover:bg-[var(--primary-dark)]"
           >
-            শুরু করুন
+            অ্যাকাউন্ট খুলুন
           </Link>
         </nav>
 
@@ -85,6 +86,14 @@ export function SiteHeader() {
                 </Link>
               );
             })}
+            <Link
+              href="/register"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-full bg-[var(--primary)] px-4 py-2 text-center text-sm font-semibold text-white"
+              style={{ color: "white" }}
+            >
+              অ্যাকাউন্ট খুলুন
+            </Link>
           </nav>
         </div>
       )}

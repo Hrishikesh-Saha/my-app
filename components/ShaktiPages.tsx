@@ -21,11 +21,15 @@ import {
   MessageCircle,
   Moon,
   Navigation,
+  Package,
   Phone,
   Send,
+  Share2,
   Shield,
   Sparkles,
   Stethoscope,
+  Truck,
+  UserPlus,
 } from "lucide-react";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 
@@ -50,31 +54,37 @@ const featureCards: Array<{
     href: "/pregnancy",
     icon: Baby,
     title: "গর্ভাবস্থা যাত্রা",
-    text: "সপ্তাহভিত্তিক তথ্য, শিশুর আকার এবং প্রয়োজনীয় পরামর্শ।",
+    text: "আপনার ভেতরে বেড়ে উঠছে একটি নতুন জীবন। প্রতিটি সপ্তাহ একটি নতুন বিস্ময়।",
   },
   {
     href: "/advice",
     icon: MessageCircle,
-    title: "AI স্বাস্থ্য পরামর্শ",
-    text: "বাংলায় সাধারণ স্বাস্থ্য প্রশ্নের দ্রুত, সহায়ক উত্তর।",
+    title: "AI স্বাস্থ্য সহায়তা",
+    text: "শক্তির স্বাস্থ্য সহচর। প্রশ্ন করুন নির্দ্বিধায়, জানুন আত্মবিশ্বাসের সঙ্গে।",
   },
   {
     href: "/health",
     icon: Heart,
-    title: "সম্পূর্ণ স্বাস্থ্যসেবা",
-    text: "পুষ্টি, মানসিক স্বাস্থ্য, ঘুম, ফিটনেস ও প্রজনন স্বাস্থ্য।",
+    title: "সমন্বিত স্বাস্থ্যসেবা",
+    text: "নিজের যত্নে সচেতন হোন, আত্মবিশ্বাসের সঙ্গে এগিয়ে চলুন।",
+  },
+  {
+    href: "/subsidy",
+    icon: Package,
+    title: "প্যাড ও ডায়াপার সহায়তা",
+    text: "অতি দূরবর্তী এলাকার নারীদের জন্য বিনামূল্যে প্যাড ও ডায়াপার ঘরে পৌঁছে দেওয়ার আবেদন।",
   },
   {
     href: "/booking",
     icon: CalendarCheck,
     title: "সহজ অ্যাপয়েন্টমেন্ট",
-    text: "পরিবার নির্বাচন, তারিখ ও সময় বেছে বুকিং সম্পন্ন করুন।",
+    text: "আপনার ডাক্তার, আপনার সময়ে। ফোন কল বা সরাসরি অ্যাপয়েন্টমেন্ট বুক করুন।",
   },
   {
     href: "/emergency",
     icon: Shield,
     title: "নিরাপত্তা ও জরুরি",
-    text: "হাসপাতাল, থানা, ফার্মেসি ও সহায়তা কেন্দ্রের তথ্য।",
+    text: "ভয় নয়, প্রস্তুতিই হোক আপনার শক্তি। জরুরি নম্বর ও সহায়তা দ্রুত হাতের কাছে।",
   },
 ];
 
@@ -214,7 +224,6 @@ const emergencySections = [
         "০১৭১৫-০০০০০০",
         "জরুরি আশ্রয় ও পরামর্শ",
       ],
-      ["কর্তব্য - জরুরি হেল্পলাইন", "টোলফ্রি", "১০৯", "জরুরি সেবা সহায়তা"],
     ],
   },
 ];
@@ -344,10 +353,6 @@ function distanceKm(from: LocationPoint, to: LocationPoint) {
   return radius * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-function mapUrl(point: LocationPoint) {
-  return `https://www.google.com/maps/search/?api=1&query=${point.lat},${point.lng}`;
-}
-
 function parseDate(value: string) {
   const [year, month, day] = value.split("-").map(Number);
   return new Date(year, month - 1, day);
@@ -435,49 +440,57 @@ function IconTile({
 export function HomePage() {
   return (
     <>
-      <section className="container-shell grid min-h-[620px] items-center gap-10 py-16 lg:grid-cols-[1.05fr_0.95fr]">
+      <section className="container-shell grid min-h-[660px] items-center gap-10 py-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <p className="mb-5 inline-flex rounded-full border border-[var(--border)] bg-white px-4 py-1 text-sm text-[var(--primary)]">
-            ✦ নারীর স্বাস্থ্য, নারীর নিরাপত্তা, নারীর ভাষা
+            ✦ স্বাস্থ্য, নিরাপত্তা, ভর্তুকি ও সহায়তা এক জায়গায়
           </p>
           <h1 className="font-display max-w-2xl text-5xl font-bold leading-tight md:text-7xl">
-            আপনার ভেতরের <span className="text-[var(--primary)]">শক্তি</span> কে
-            জাগ্রত করুন
+            নিজের যত্নে জাগুক আপনার <span className="text-[var(--primary)]">শক্তি</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-            বাংলায় AI-চালিত স্বাস্থ্য পরামর্শ, পিরিয়ড ও গর্ভাবস্থা ট্র্যাকিং,
-            ডাক্তারের অ্যাপয়েন্টমেন্ট এবং জরুরি সহায়তা।
+            পিরিয়ড ট্র্যাকিং, গর্ভাবস্থা যাত্রা, AI স্বাস্থ্য সহায়তা, ডাক্তার বুকিং,
+            ভর্তুকি আবেদন এবং জরুরি নিরাপত্তা - সবকিছু সহজ বাংলায়।
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               style={{ "color": "white" }}
               className="focus-ring rounded-full bg-[var(--primary)] px-6 py-3 font-semibold shadow-sm transition hover:bg-[var(--primary-dark)]"
-              href="/emergency"
+              href="/register"
             >
-              সহায়তা চান
+              অ্যাকাউন্ট খুলুন
             </Link>
             <Link
               className="focus-ring rounded-full border border-[var(--border)] bg-white px-6 py-3 font-semibold text-[var(--foreground)] transition hover:border-[var(--primary)]"
-              href="/tracker"
+              href="/advice"
             >
-              পিরিয়ড ট্র্যাক করুন
+              AI সহায়তা নিন
+            </Link>
+            <Link
+              className="focus-ring rounded-full border border-[var(--border)] bg-white px-6 py-3 font-semibold text-[var(--foreground)] transition hover:border-[var(--primary)]"
+              href="/emergency"
+            >
+              জরুরি সহায়তা
             </Link>
           </div>
           <div className="mt-7 flex flex-wrap gap-5 text-sm text-[var(--muted)]">
             <span>♡ ১০০% গোপনীয়</span>
-            <span>⌘ AI চালিত</span>
-            <span>বাংলায়</span>
+            <span>⌘ AI স্বাস্থ্য সহচর</span>
+            <span>ভর্তুকি আবেদন</span>
+            <span>১৬০ টাকার ডাক্তার কল</span>
           </div>
         </div>
-        <div className="mx-auto w-full max-w-[430px]">
+        <div className="mx-auto w-full max-w-[460px]">
+          <div className="soft-card relative overflow-hidden rounded-3xl p-4">
           <Image
             src="/shakti-hero.jpg"
             alt="শক্তির ফুলেল নারীর স্বাস্থ্যচিত্র"
             width={520}
             height={520}
             priority
-            className="aspect-square w-full rounded-2xl object-cover shadow-2xl shadow-rose-950/15"
+            className="aspect-square w-full rounded-2xl object-cover"
           />
+          </div>
         </div>
       </section>
 
@@ -697,7 +710,7 @@ export function PregnancyPage() {
       <SectionIntro
         eyebrow="গর্ভাবস্থা ট্র্যাকার"
         title="আপনার গর্ভাবস্থার যাত্রা"
-        subtitle="শেষ মাসিকের তারিখ দিন, প্রতি সপ্তাহের তথ্য জানুন।"
+        subtitle="আপনার ভেতরে বেড়ে উঠছে একটি নতুন জীবন। প্রতিটি সপ্তাহ একটি নতুন বিস্ময়।"
       />
 
       <div className="grid gap-8 lg:grid-cols-2">
@@ -783,8 +796,8 @@ export function HealthPage() {
   return (
     <section className="container-shell py-12">
       <SectionIntro
-        title="সম্পূর্ণ স্বাস্থ্যসেবা"
-        subtitle="শরীর ও মনের প্রতিটি দিকের জন্য বাংলায় তৈরি নির্দেশিকা।"
+        title="সমন্বিত স্বাস্থ্যসেবা"
+        subtitle="নিজের যত্নে সচেতন হোন, আত্মবিশ্বাসের সঙ্গে এগিয়ে চলুন।"
       />
       <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
         {healthCards.map((card) => (
@@ -795,6 +808,428 @@ export function HealthPage() {
             text={card.text}
           />
         ))}
+      </div>
+    </section>
+  );
+}
+
+export function SubsidyPage() {
+  const [selectedItems, setSelectedItems] = useState(["প্যাড"]);
+  const [result, setResult] = useState<{
+    applicant: string;
+    age: number;
+    fee: number;
+    income: number;
+    items: string;
+    message: string;
+    plan: "free" | "paid";
+    ref: string;
+  } | null>(null);
+
+  function toggleItem(item: string) {
+    setSelectedItems((items) =>
+      items.includes(item) ? items.filter((value) => value !== item) : [...items, item],
+    );
+  }
+
+  function applyForSubsidy(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const applicant = String(form.get("name") || "আবেদনকারী");
+    const locationType = String(form.get("locationType") || "");
+    const union = String(form.get("union") || "");
+    const age = Number(form.get("age") || 0);
+    const income = Number(form.get("monthlyIncome") || 0);
+    const items = selectedItems.length ? selectedItems.join(", ") : "প্যাড";
+    const freeIncomeLimit = 15000;
+    const lowIncomeLimit = 25000;
+    const plan: "free" | "paid" = income > 0 && income <= freeIncomeLimit ? "free" : "paid";
+    const isRemote = locationType === "very-remote" || locationType === "remote";
+    const fee = plan === "free" ? 0 : income <= lowIncomeLimit ? 180 : 320;
+    const ref = `SK-${Date.now().toString().slice(-6)}`;
+
+    setResult({
+      applicant,
+      age,
+      fee,
+      income,
+      items,
+      plan,
+      ref,
+      message:
+        plan === "free"
+          ? `আপনার মাসিক আয় ${bnNumber(income)} টাকা। যাচাইয়ের পর ${union || "আপনার এলাকায়"} প্যাড/ডায়াপার বিনামূল্যে বাড়িতে পাঠানো হবে${isRemote ? " এবং দূরবর্তী এলাকা হিসেবে অগ্রাধিকার পাবে" : ""}।`
+          : `আপনার মাসিক আয় ${bnNumber(income)} টাকা হওয়ায় এটি পেইড সুবিধা হিসেবে যাবে। মাসিক সার্ভিস ফি ${bnNumber(fee)} টাকা; ডেলিভারির আগে সহায়তা দল ফোনে নিশ্চিত করবে।`,
+    });
+  }
+
+  return (
+    <section className="container-shell py-12">
+      <SectionIntro
+        eyebrow="স্বাস্থ্য সহায়তা"
+        title="প্যাড ও ডায়াপার ভর্তুকি"
+        subtitle="অতি দূরবর্তী এলাকার নারী ও শিশুর জন্য বিনামূল্যে প্যাড ও ডায়াপার ঘরে পৌঁছে দেওয়ার আবেদন।"
+      />
+
+      <div className="mb-8 grid gap-5 md:grid-cols-3">
+        <IconTile
+          icon={MapPin}
+          title="দূরবর্তী এলাকা"
+          text="চর, পাহাড়ি এলাকা, নদীপথ বা বাজার/ফার্মেসি থেকে অনেক দূরের পরিবার অগ্রাধিকার পাবে।"
+        />
+        <IconTile
+          icon={Package}
+          title="মাসিক প্যাক"
+          text="প্যাড, শিশুর ডায়াপার বা দুটিই প্রয়োজন অনুযায়ী নির্বাচন করা যাবে।"
+        />
+        <IconTile
+          icon={Truck}
+          title="বাড়িতে ডেলিভারি"
+          text="যাচাই শেষ হলে স্থানীয় সহায়তা দল আপনার ঠিকানায় প্যাক পৌঁছে দেবে।"
+        />
+      </div>
+
+      <form onSubmit={applyForSubsidy} className="soft-card mx-auto max-w-5xl rounded-2xl p-6 md:p-9">
+        <div className="grid gap-7 lg:grid-cols-[1fr_0.8fr]">
+          <div>
+            <h2 className="font-display text-3xl font-bold">আবেদনকারীর তথ্য</h2>
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
+              <label className="block text-sm text-[var(--muted)]">
+                পূর্ণ নাম
+                <input
+                  name="name"
+                  required
+                  className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                  placeholder="আপনার নাম"
+                />
+              </label>
+              <label className="block text-sm text-[var(--muted)]">
+                ফোন নম্বর
+                <input
+                  name="phone"
+                  required
+                  className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                  placeholder="+৮৮০ ১XXX XXXXXX"
+                />
+              </label>
+              <label className="block text-sm text-[var(--muted)]">
+                বয়স
+                <input
+                  name="age"
+                  required
+                  type="number"
+                  min="10"
+                  max="80"
+                  className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                  placeholder="যেমন: ২৪"
+                />
+              </label>
+              <label className="block text-sm text-[var(--muted)]">
+                মাসিক আয় (টাকা)
+                <input
+                  name="monthlyIncome"
+                  required
+                  type="number"
+                  min="0"
+                  className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                  placeholder="যেমন: ১২০০০"
+                />
+              </label>
+              <label className="block text-sm text-[var(--muted)]">
+                পরিচয়পত্রের ধরন
+                <select
+                  name="idType"
+                  required
+                  className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                  defaultValue="nid"
+                >
+                  <option value="nid">NID নম্বর</option>
+                  <option value="birth">জন্ম সনদ নম্বর</option>
+                </select>
+              </label>
+              <label className="block text-sm text-[var(--muted)]">
+                NID / জন্ম সনদ নম্বর
+                <input
+                  name="idNumber"
+                  required
+                  className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                  placeholder="নম্বর লিখুন"
+                />
+              </label>
+              <label className="block text-sm text-[var(--muted)]">
+                জেলা
+                <input
+                  name="district"
+                  required
+                  className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                  placeholder="যেমন: কুড়িগ্রাম"
+                />
+              </label>
+              <label className="block text-sm text-[var(--muted)]">
+                উপজেলা / ইউনিয়ন
+                <input
+                  name="union"
+                  required
+                  className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                  placeholder="যেমন: রৌমারী, দাঁতভাঙ্গা"
+                />
+              </label>
+              <label className="block text-sm text-[var(--muted)] md:col-span-2">
+                সম্পূর্ণ ডেলিভারি ঠিকানা
+                <textarea
+                  name="address"
+                  required
+                  className="focus-ring mt-2 min-h-28 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                  placeholder="গ্রাম, ওয়ার্ড, রাস্তার বর্ণনা, কাছের পরিচিত জায়গা..."
+                />
+              </label>
+            </div>
+
+            <h3 className="mt-8 font-display text-2xl font-bold">এলাকার অবস্থা</h3>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {[
+                ["very-remote", "অতি দূরবর্তী / দুর্গম"],
+                ["remote", "দূরবর্তী"],
+                ["regular", "সাধারণ এলাকা"],
+                ["unknown", "নিশ্চিত নই"],
+              ].map(([value, label]) => (
+                <label
+                  key={value}
+                  className="focus-within:border-[var(--primary)] rounded-xl border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm font-semibold"
+                >
+                  <input
+                    className="mr-2 accent-[var(--primary)]"
+                    type="radio"
+                    name="locationType"
+                    value={value}
+                    defaultChecked={value === "very-remote"}
+                  />
+                  {label}
+                </label>
+              ))}
+            </div>
+
+            <label className="mt-6 block text-sm text-[var(--muted)]">
+              কেন সহায়তা প্রয়োজন?
+              <textarea
+                name="reason"
+                className="focus-ring mt-2 min-h-24 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                placeholder="দোকান দূরে, আয়ের সীমাবদ্ধতা, নদীপথ/পাহাড়ি পথ, শিশুর বয়স ইত্যাদি লিখুন..."
+              />
+            </label>
+          </div>
+
+          <div className="rounded-2xl border border-[var(--border)] bg-[#fff0e9] p-5">
+            <h2 className="font-display text-3xl font-bold">যা প্রয়োজন</h2>
+            <div className="mt-5 grid gap-3">
+              {["প্যাড", "শিশুর ডায়াপার", "প্রসব-পরবর্তী প্যাড"].map((item) => (
+                <label
+                  key={item}
+                  className={`rounded-xl border px-4 py-3 font-semibold ${
+                    selectedItems.includes(item)
+                      ? "border-[var(--primary)] bg-white text-[var(--primary)]"
+                      : "border-[var(--border)] bg-[var(--background)]"
+                  }`}
+                >
+                  <input
+                    className="mr-2 accent-[var(--primary)]"
+                    type="checkbox"
+                    checked={selectedItems.includes(item)}
+                    onChange={() => toggleItem(item)}
+                  />
+                  {item}
+                </label>
+              ))}
+            </div>
+
+            <label className="mt-6 block text-sm text-[var(--muted)]">
+              মাসিক প্রয়োজন
+              <select
+                name="quantity"
+                className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                defaultValue="standard"
+              >
+                <option value="small">ছোট প্যাক</option>
+                <option value="standard">স্ট্যান্ডার্ড প্যাক</option>
+                <option value="large">বড় পরিবার / বেশি প্রয়োজন</option>
+              </select>
+            </label>
+
+            <label className="mt-6 block text-sm text-[var(--muted)]">
+              পরিবারের অবস্থা
+              <select
+                name="household"
+                className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                defaultValue="low-income"
+              >
+                <option value="low-income">স্বল্প আয়ের পরিবার</option>
+                <option value="single-mother">একক মা / অভিভাবক</option>
+                <option value="student">শিক্ষার্থী</option>
+                <option value="other">অন্যান্য</option>
+              </select>
+            </label>
+
+            <p className="mt-6 rounded-xl border border-[var(--border)] bg-white p-4 text-sm leading-7 text-[var(--muted)]">
+              মাসিক আয় ১৫,০০০ টাকার মধ্যে হলে বিনামূল্যে ভর্তুকি পাওয়া যাবে। আয় বেশি হলে একই সুবিধা পেইড সার্ভিস হিসেবে দেওয়া হবে।
+              বাস্তব ডেলিভারির আগে ফোনে তথ্য যাচাই করা হবে।
+            </p>
+          </div>
+        </div>
+
+        <button
+          className="focus-ring mt-8 w-full rounded-full bg-[var(--primary)] px-6 py-4 font-semibold text-white transition hover:bg-[var(--primary-dark)]"
+          type="submit"
+        >
+          ভর্তুকির জন্য আবেদন করুন
+        </button>
+
+        {result ? (
+          <div className="mt-6 rounded-2xl border border-green-200 bg-green-50 p-5 leading-7 text-green-900">
+            <p className="flex items-center gap-2 font-display text-2xl font-bold">
+              <CheckCircle size={22} />
+              আবেদন গ্রহণ করা হয়েছে
+            </p>
+            <p className="mt-3">
+              {result.applicant}, আপনার আবেদন নম্বর <strong>{result.ref}</strong>। নির্বাচিত সহায়তা:{" "}
+              <strong>{result.items}</strong>।
+            </p>
+            <p className="mt-2">{result.message}</p>
+            <p className="mt-2 text-sm">
+              বয়স: {bnNumber(result.age)} বছর · মাসিক আয়: {bnNumber(result.income)} টাকা
+            </p>
+            <p className="mt-2 text-sm">
+              অবস্থা:{" "}
+              {result.plan === "free"
+                ? "বিনামূল্যে ভর্তুকির জন্য প্রাথমিকভাবে যোগ্য"
+                : `পেইড সুবিধা · সম্ভাব্য মাসিক ফি ${bnNumber(result.fee)} টাকা`}
+            </p>
+          </div>
+        ) : null}
+      </form>
+    </section>
+  );
+}
+
+export function RegisterPage() {
+  const [registered, setRegistered] = useState<{
+    name: string;
+    phone: string;
+    ref: string;
+  } | null>(null);
+
+  function register(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const name = String(form.get("name") || "আপনি");
+    const phone = String(form.get("phone") || "");
+    setRegistered({
+      name,
+      phone,
+      ref: `AC-${Date.now().toString().slice(-6)}`,
+    });
+  }
+
+  return (
+    <section className="container-shell py-12">
+      <SectionIntro
+        eyebrow="নতুন অ্যাকাউন্ট"
+        title="শক্তিতে অ্যাকাউন্ট খুলুন"
+        subtitle="আপনার স্বাস্থ্য তথ্য, বুকিং, ভর্তুকি আবেদন ও জরুরি সহায়তা এক জায়গায় রাখুন।"
+      />
+
+      <div className="grid gap-8 lg:grid-cols-[0.8fr_1fr]">
+        <div className="rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[#cf6171] p-7 text-white shadow-2xl shadow-rose-950/20">
+          <UserPlus size={34} />
+          <h2 className="font-display mt-4 text-4xl font-bold">সহজ শুরু</h2>
+          <p className="mt-3 leading-7 text-white/90">
+            শুধু কয়েকটি তথ্য দিন। এরপর পিরিয়ড ট্র্যাকার, বুকিং, ভর্তুকি আবেদন ও জরুরি সেবা সহজে ব্যবহার করুন।
+          </p>
+          <div className="mt-7 grid gap-3 text-sm font-semibold">
+            <span className="rounded-xl bg-white/18 px-4 py-3">১. নাম ও ফোন নম্বর দিন</span>
+            <span className="rounded-xl bg-white/18 px-4 py-3">২. এলাকা ও প্রয়োজন বেছে নিন</span>
+            <span className="rounded-xl bg-white/18 px-4 py-3">৩. সেবা ব্যবহার শুরু করুন</span>
+          </div>
+        </div>
+
+        <form onSubmit={register} className="soft-card rounded-2xl p-6 md:p-8">
+          <h2 className="font-display text-3xl font-bold">রেজিস্ট্রেশন ফর্ম</h2>
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            <label className="block text-sm text-[var(--muted)]">
+              পূর্ণ নাম
+              <input
+                name="name"
+                required
+                className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                placeholder="আপনার নাম"
+              />
+            </label>
+            <label className="block text-sm text-[var(--muted)]">
+              ফোন নম্বর
+              <input
+                name="phone"
+                required
+                className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                placeholder="+৮৮০ ১XXX XXXXXX"
+              />
+            </label>
+            <label className="block text-sm text-[var(--muted)]">
+              ইমেইল (ঐচ্ছিক)
+              <input
+                name="email"
+                type="email"
+                className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                placeholder="you@example.com"
+              />
+            </label>
+            <label className="block text-sm text-[var(--muted)]">
+              জেলা
+              <input
+                name="district"
+                required
+                className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                placeholder="আপনার জেলা"
+              />
+            </label>
+            <label className="block text-sm text-[var(--muted)] md:col-span-2">
+              আপনি কোন সেবা আগে ব্যবহার করতে চান?
+              <select
+                name="firstService"
+                className="focus-ring mt-2 w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)]"
+                defaultValue="tracker"
+              >
+                <option value="tracker">পিরিয়ড ট্র্যাকার</option>
+                <option value="advice">AI স্বাস্থ্য সহায়তা</option>
+                <option value="booking">অ্যাপয়েন্টমেন্ট</option>
+                <option value="subsidy">প্যাড ও ডায়াপার ভর্তুকি</option>
+                <option value="emergency">জরুরি সেবা</option>
+              </select>
+            </label>
+            <label className="flex items-start gap-3 rounded-xl border border-[var(--border)] bg-[#fff0e9] p-4 text-sm leading-6 text-[var(--muted)] md:col-span-2">
+              <input className="mt-1 accent-[var(--primary)]" type="checkbox" required />
+              আমি সম্মত যে শক্তি আমার দেওয়া তথ্য সেবা, বুকিং ও সহায়তার জন্য ব্যবহার করতে পারবে।
+            </label>
+          </div>
+
+          <button
+            className="focus-ring mt-7 w-full rounded-full bg-[var(--primary)] px-6 py-4 font-semibold text-white transition hover:bg-[var(--primary-dark)]"
+            type="submit"
+          >
+            অ্যাকাউন্ট তৈরি করুন
+          </button>
+
+          {registered ? (
+            <div className="mt-6 rounded-2xl border border-green-200 bg-green-50 p-5 leading-7 text-green-900">
+              <p className="flex items-center gap-2 font-display text-2xl font-bold">
+                <CheckCircle size={22} />
+                অ্যাকাউন্ট তৈরি হয়েছে
+              </p>
+              <p className="mt-2">
+                {registered.name}, আপনার অ্যাকাউন্ট নম্বর <strong>{registered.ref}</strong>। আমরা{" "}
+                <strong>{registered.phone}</strong> নম্বরে প্রয়োজনীয় আপডেট পাঠাব।
+              </p>
+            </div>
+          ) : null}
+        </form>
       </div>
     </section>
   );
@@ -851,8 +1286,8 @@ export function AdvicePage() {
     <section className="container-shell py-12">
       <SectionIntro
         eyebrow="AI চালিত · বাংলা"
-        title="AI পরামর্শ"
-        subtitle="আপনার প্রশ্ন গোপনীয়। নির্ভয়ে জিজ্ঞেস করুন।"
+        title="AI স্বাস্থ্য সহায়তা"
+        subtitle="শক্তির স্বাস্থ্য সহচর। প্রশ্ন করুন নির্দ্বিধায়, জানুন আত্মবিশ্বাসের সঙ্গে।"
       />
 
       <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-white">
@@ -916,6 +1351,7 @@ export function AdvicePage() {
 
 export function BookingPage() {
   const [service, setService] = useState(serviceOptions[0]);
+  const [consultType, setConsultType] = useState<"trainee-call" | "physical">("trainee-call");
   const [date, setDate] = useState(todayIso);
   const [time, setTime] = useState(timeOptions[0]);
   const [confirmed, setConfirmed] = useState("");
@@ -932,8 +1368,16 @@ export function BookingPage() {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const name = String(form.get("name") || "আপনি");
+    const bookingType =
+      consultType === "trainee-call"
+        ? "প্রশিক্ষণার্থী ডাক্তারের ফোন কল"
+        : "সরাসরি/ফিজিক্যাল অ্যাপয়েন্টমেন্ট";
+    const feeText =
+      consultType === "trainee-call"
+        ? "ফি ১৬০ টাকা"
+        : "ফি ক্লিনিক/ডাক্তারের সাথে নিশ্চিত হবে";
     setConfirmed(
-      `${name}, আপনার ${service} বুকিং ${bnDate(parseDate(date))} ${time}-এ নিশ্চিত হয়েছে।`,
+      `${name}, আপনার ${bookingType} বুকিং ${bnDate(parseDate(date))} ${time}-এ নিশ্চিত হয়েছে। পরিষেবা: ${service}। ${feeText}।`,
     );
   }
 
@@ -942,7 +1386,7 @@ export function BookingPage() {
       <SectionIntro
         eyebrow="অনলাইন বুকিং"
         title="অ্যাপয়েন্টমেন্ট বুক করুন"
-        subtitle="সময় বেছে দিন, বিশেষজ্ঞের পরামর্শ পান বাংলায়।"
+        subtitle="আপনার ডাক্তার, আপনার সময়ে। ফোনে ট্রেইনি ডাক্তার অথবা সরাসরি অ্যাপয়েন্টমেন্ট বেছে নিন।"
       />
 
       <form
@@ -950,6 +1394,43 @@ export function BookingPage() {
         className="soft-card mx-auto max-w-5xl rounded-2xl p-7 md:p-9"
       >
         <h2 className="mb-5 flex items-center gap-2 font-display text-2xl font-bold">
+          <Phone size={22} color={primary} /> পরামর্শের ধরন
+        </h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          {[
+            {
+              value: "trainee-call" as const,
+              title: "ট্রেইনি ডাক্তারকে কল করুন",
+              text: "১৬০ টাকায় ফোনে প্রাথমিক স্বাস্থ্য পরামর্শ নিন।",
+              fee: "১৬০ টাকা",
+            },
+            {
+              value: "physical" as const,
+              title: "ফিজিক্যাল অ্যাপয়েন্টমেন্ট",
+              text: "ক্লিনিক বা হাসপাতালে সরাসরি দেখানোর সময় বুক করুন।",
+              fee: "ক্লিনিকে পেমেন্ট",
+            },
+          ].map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => setConsultType(option.value)}
+              className={`focus-ring rounded-2xl border p-5 text-left transition ${
+                consultType === option.value
+                  ? "border-[var(--primary)] bg-white shadow-lg shadow-rose-950/10"
+                  : "border-[var(--border)] bg-[var(--background)]"
+              }`}
+            >
+              <span className="font-display text-2xl font-bold">{option.title}</span>
+              <span className="mt-2 block leading-7 text-[var(--muted)]">{option.text}</span>
+              <span className="mt-4 inline-flex rounded-full bg-[var(--primary-soft)] px-4 py-1 text-sm font-semibold text-[var(--primary)]">
+                {option.fee}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <h2 className="mb-5 mt-9 flex items-center gap-2 font-display text-2xl font-bold">
           <Stethoscope size={22} color={primary} /> পরিষেবা নির্বাচন করুন
         </h2>
         <div className="grid gap-3 md:grid-cols-2">
@@ -1116,39 +1597,6 @@ export function EmergencyPage() {
       .filter(Boolean);
   }, [userLocation]);
 
-  const mapPoints = useMemo(() => {
-    const origin = userLocation ?? defaultDhakaLocation;
-    const points = [
-      ...nearestFacilities.map((facility) => ({
-        ...facility,
-        pointType: "facility" as const,
-      })),
-      {
-        ...origin,
-        category: "user" as const,
-        categoryLabel: "আপনি",
-        distance: 0,
-        icon: Navigation,
-        name: userLocation ? "আপনার লাইভ লোকেশন" : "আনুমানিক কেন্দ্র",
-        pointType: "user" as const,
-      },
-    ];
-    const lats = points.map((point) => point.lat);
-    const lngs = points.map((point) => point.lng);
-    const minLat = Math.min(...lats);
-    const maxLat = Math.max(...lats);
-    const minLng = Math.min(...lngs);
-    const maxLng = Math.max(...lngs);
-    const latSpan = Math.max(maxLat - minLat, 0.01);
-    const lngSpan = Math.max(maxLng - minLng, 0.01);
-
-    return points.map((point) => ({
-      ...point,
-      x: 10 + ((point.lng - minLng) / lngSpan) * 80,
-      y: 90 - ((point.lat - minLat) / latSpan) * 80,
-    }));
-  }, [nearestFacilities, userLocation]);
-
   useEffect(() => {
     return () => {
       if (watchIdRef.current !== null && "geolocation" in navigator) {
@@ -1225,11 +1673,40 @@ export function EmergencyPage() {
     );
   }
 
+  async function shareLiveLocation() {
+    if (!userLocation) {
+      setLocationStatus("লাইভ লোকেশন শেয়ার করতে আগে আপনার লোকেশন চালু করুন।");
+      startLocationTracking();
+      return;
+    }
+
+    const locationLink = `https://www.google.com/maps?q=${userLocation.lat},${userLocation.lng}`;
+    const text = `আমি জরুরি সহায়তা চাই। আমার লাইভ লোকেশন: ${userLocation.lat.toFixed(
+      5,
+    )}, ${userLocation.lng.toFixed(5)} (${locationLink})`;
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          text,
+          title: "শক্তি জরুরি লোকেশন",
+          url: locationLink,
+        });
+        setLocationStatus("লোকেশন শেয়ার করা হয়েছে।");
+      } else {
+        await navigator.clipboard.writeText(text);
+        setLocationStatus("লোকেশন কপি হয়েছে। যাকে দরকার তাকে পাঠিয়ে দিন।");
+      }
+    } catch {
+      setLocationStatus("লোকেশন শেয়ার করা যায়নি। আবার চেষ্টা করুন বা জরুরি নম্বরে কল করুন।");
+    }
+  }
+
   return (
     <section className="container-shell py-12">
       <SectionIntro
         title="নিরাপত্তা ও জরুরি সেবা"
-        subtitle="আপনার এলাকার হাসপাতাল, থানা, ফার্মেসি ও সহায়তা কেন্দ্রের তথ্য।"
+        subtitle="ভয় নয়, প্রস্তুতিই হোক আপনার শক্তি। জরুরি নম্বর, লাইভ লোকেশন শেয়ার ও নিকটস্থ সহায়তা।"
       />
 
       <div className="relative mb-10 text-center">
@@ -1242,15 +1719,16 @@ export function EmergencyPage() {
           </span>
         </div>
         <button
-          className="focus-ring mx-auto grid h-36 w-36 place-items-center rounded-full border-4 border-white bg-red-600 text-center font-bold text-white shadow-xl shadow-red-900/20 transition-colors hover:bg-red-700"
+          className="focus-ring mx-auto grid h-32 relative w-48 cursor-pointer place-items-center rounded-full border-4 border-white bg-red-600 text-center font-bold text-white shadow-xl shadow-red-900/20 transition-colors hover:bg-red-700"
           type="button"
           onClick={openSosPanel}
           aria-expanded={sosOpen}
         >
+          <div className="w-full h-full rounded-full -z-10 bg-red-600 absolute animate-ping"></div>
           <span>
-            <Phone className="mx-auto mb-1" size={26} />
-            SOS
-            <span className="block text-xs font-medium">জরুরি কল করুন</span>
+            <Phone className="mx-auto mb-1 " size={26} />
+            <span className="font-bold text-xl">SOS</span>
+            <span className="block font-medium">জরুরি কল করুন</span>
           </span>
         </button>
       </div>
@@ -1301,7 +1779,7 @@ export function EmergencyPage() {
                 </span>
               </div>
             ) : null}
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="mt-5 grid gap-3 lg:grid-cols-3">
               <button
                 className="focus-ring rounded-xl bg-[var(--primary)] px-5 py-3 font-semibold text-white transition hover:bg-[var(--primary-dark)]"
                 type="button"
@@ -1311,91 +1789,20 @@ export function EmergencyPage() {
                 আমার লোকেশন ব্যবহার করুন
               </button>
               <button
+                className="focus-ring rounded-xl bg-red-600 px-5 py-3 font-semibold text-white transition hover:bg-red-700"
+                type="button"
+                onClick={shareLiveLocation}
+              >
+                <Share2 className="mr-2 inline" size={18} />
+                লাইভ লোকেশন শেয়ার করুন
+              </button>
+              <button
                 className="focus-ring rounded-xl border border-[var(--border)] bg-white px-5 py-3 font-semibold text-[var(--foreground)] transition hover:border-[var(--primary)]"
                 type="button"
                 onClick={stopLocationTracking}
               >
                 লোকেশন বন্ধ করুন
               </button>
-            </div>
-          </div>
-
-          <div className="mt-6 overflow-hidden rounded-2xl border border-red-100 bg-white">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-red-100 px-5 py-4">
-              <div>
-                <h3 className="font-display text-2xl font-bold">
-                  লাইভ জরুরি ম্যাপ
-                </h3>
-                <p className="mt-1 text-sm text-[var(--muted)]">
-                  {userLocation
-                    ? "আপনার অবস্থান এবং কাছের সেবাগুলো দেখানো হচ্ছে।"
-                    : "লোকেশন চালু না থাকলে আনুমানিক ঢাকা কেন্দ্র ধরে ম্যাপ দেখানো হচ্ছে।"}
-                </p>
-              </div>
-              <a
-                className="focus-ring rounded-full border border-[var(--border)] bg-[var(--background)] px-4 py-2 text-sm font-semibold text-[var(--primary)]"
-                href={mapUrl(userLocation ?? defaultDhakaLocation)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                বড় ম্যাপে খুলুন
-              </a>
-            </div>
-            <div className="relative min-h-[320px] overflow-hidden bg-[#f7dcd2]">
-              <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(90deg,rgba(184,52,73,.16)_1px,transparent_1px),linear-gradient(rgba(184,52,73,.16)_1px,transparent_1px)] [background-size:42px_42px]" />
-              <div className="absolute left-[8%] top-[24%] h-24 w-[78%] -rotate-6 rounded-full border-8 border-white/75" />
-              <div className="absolute left-[22%] top-[55%] h-20 w-[62%] rotate-12 rounded-full border-8 border-white/75" />
-              {mapPoints.map((point) => {
-                const Icon = point.icon;
-                const isUser = point.pointType === "user";
-
-                return (
-                  <a
-                    key={`${point.pointType}-${point.category}-${point.name}`}
-                    href={mapUrl({ lat: point.lat, lng: point.lng })}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`focus-ring absolute z-10 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full px-3 py-2 text-xs font-bold shadow-lg ${
-                      isUser
-                        ? "red-action-link bg-red-600"
-                        : "bg-white text-[var(--foreground)]"
-                    }`}
-                    style={{
-                      color: isUser ? "#ffffff" : undefined,
-                      left: `${point.x}%`,
-                      top: `${point.y}%`,
-                    }}
-                    title={point.name}
-                  >
-                    <Icon size={15} />
-                    <span className="max-w-28 truncate">
-                      {isUser ? "আপনি" : point.categoryLabel}
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
-            <div className="grid gap-3 border-t border-red-100 p-4 sm:grid-cols-2">
-              {nearestFacilities.map((facility) => (
-                <a
-                  key={`map-link-${facility.category}-${facility.name}`}
-                  className="focus-ring rounded-xl border border-[var(--border)] bg-[var(--background)] p-4 text-sm transition hover:border-[var(--primary)]"
-                  href={mapUrl({ lat: facility.lat, lng: facility.lng })}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span className="font-semibold text-[var(--primary)]">
-                    {facility.categoryLabel}
-                  </span>
-                  <span className="mt-1 block font-semibold">
-                    {facility.name}
-                  </span>
-                  <span className="mt-1 block text-[var(--muted)]">
-                    ম্যাপে দেখুন · প্রায়{" "}
-                    {bnNumber(Number(facility.distance.toFixed(1)))} কিমি
-                  </span>
-                </a>
-              ))}
             </div>
           </div>
 
@@ -1442,14 +1849,6 @@ export function EmergencyPage() {
                       style={{ color: "#ffffff" }}
                     >
                       কল করুন
-                    </a>
-                    <a
-                      className="focus-ring rounded-full border border-[var(--border)] bg-white px-4 py-2 text-sm font-semibold text-[var(--primary)]"
-                      href={mapUrl({ lat: facility.lat, lng: facility.lng })}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      ম্যাপে দেখুন
                     </a>
                     <button
                       className="focus-ring rounded-full border border-[var(--border)] bg-white px-4 py-2 text-sm font-semibold text-[var(--primary)]"
