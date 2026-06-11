@@ -65,8 +65,8 @@ const featureCards: Array<{
   {
     href: "/health",
     icon: Heart,
-    title: "সমন্বিত স্বাস্থ্যসেবা",
-    text: "নিজের যত্নে সচেতন হোন, আত্মবিশ্বাসের সঙ্গে এগিয়ে চলুন।",
+    title: "নারীর প্রতিদিনের স্বাস্থ্য যত্ন",
+    text: "মাসিক স্বাস্থ্য, পুষ্টি, মন, ঘুম ও প্রজনন স্বাস্থ্য নিয়ে সহজ দৈনন্দিন পরামর্শ।",
   },
   {
     href: "/subsidy",
@@ -88,43 +88,111 @@ const featureCards: Array<{
   },
 ];
 
-const healthCards = [
+const healthAdviceSections = [
+  {
+    icon: Droplet,
+    title: "মাসিক স্বাস্থ্য",
+    intro: "পরিষ্কার-পরিচ্ছন্নতা ও নিজের চক্র বোঝা শরীরের যত্নের প্রথম ধাপ।",
+    tips: [
+      "৪-৬ ঘণ্টা পরপর প্যাড বদলান, বেশি রক্তপাত হলে আরও দ্রুত বদলান।",
+      "মাসিকের তারিখ, ব্যথা ও রক্তপাতের পরিমাণ লিখে রাখুন।",
+      "দুর্গন্ধ, জ্বর, অতিরিক্ত ব্যথা বা অস্বাভাবিক রক্তপাত হলে চিকিৎসকের পরামর্শ নিন।",
+    ],
+  },
   {
     icon: Apple,
-    title: "পুষ্টি ও খাদ্য",
-    text: "চক্রের প্রতিটি পর্যায়ে সুষম খাবার এবং পুষ্টিগুণের তালিকা।",
+    title: "পুষ্টি ও রক্তস্বল্পতা",
+    intro:
+      "নারীদের ক্লান্তি, মাথা ঘোরা ও দুর্বলতার বড় কারণ হতে পারে আয়রনের ঘাটতি।",
+    tips: [
+      "ডাল, ডিম, মাছ, কলিজা, সবুজ শাক, বাদাম ও মৌসুমি ফল খাবারে রাখুন।",
+      "আয়রনসমৃদ্ধ খাবারের সঙ্গে লেবু/আমলকী/কমলা খেলে শোষণ ভালো হয়।",
+      "চা-কফি খাবারের ঠিক আগে বা পরে না খাওয়াই ভালো।",
+    ],
   },
   {
     icon: Brain,
     title: "মানসিক স্বাস্থ্য",
-    text: "চাপ, উদ্বেগ এবং মেজাজ পরিবর্তন সামলানোর সহজ উপায়।",
+    intro: "চাপ, ঘুমের সমস্যা বা মন খারাপ দীর্ঘদিন চললে সেটাকে গুরুত্ব দিন।",
+    tips: [
+      "প্রতিদিন ১০ মিনিট ধীরে শ্বাস নেওয়া বা শান্তভাবে হাঁটার সময় রাখুন।",
+      "বিশ্বাসযোগ্য কারও সঙ্গে নিজের অনুভূতি বলুন।",
+      "নিজেকে ক্ষতি করার চিন্তা হলে দ্রুত কাছের মানুষ, ডাক্তার বা জরুরি সহায়তার সঙ্গে যোগাযোগ করুন।",
+    ],
   },
   {
     icon: Dumbbell,
-    title: "ফিটনেস ও যোগ",
-    text: "ঘরে বসে করা যায় এমন ব্যায়াম, শ্বাসপ্রশ্বাস ও স্ট্রেচিং।",
-  },
-  {
-    icon: Moon,
-    title: "ঘুম ও বিশ্রাম",
-    text: "ভালো ঘুমের অভ্যাস গড়ে তোলার ব্যবহারিক পরামর্শ।",
+    title: "ব্যায়াম ও শরীরচর্চা",
+    intro: "হালকা নিয়মিত চলাফেরা হরমোন, ঘুম, ওজন ও মনের ওপর ভালো প্রভাব ফেলে।",
+    tips: [
+      "সপ্তাহে ৫ দিন ২০-৩০ মিনিট হাঁটা দিয়ে শুরু করুন।",
+      "মাসিকের ব্যথা থাকলে হালকা স্ট্রেচিং ও গরম সেঁক সাহায্য করতে পারে।",
+      "গর্ভাবস্থা, অসুস্থতা বা তীব্র ব্যথা থাকলে ব্যায়ামের আগে চিকিৎসকের পরামর্শ নিন।",
+    ],
   },
   {
     icon: Heart,
     title: "প্রজনন স্বাস্থ্য",
-    text: "গর্ভধারণ, গর্ভনিরোধ ও মাসিক সম্পর্কিত নির্দেশনা।",
+    intro:
+      "নিয়মিত চেকআপ, নিরাপদ যৌনস্বাস্থ্য ও সঠিক তথ্য অনেক সমস্যা আগে থেকেই কমাতে পারে।",
+    tips: [
+      "অস্বাভাবিক স্রাব, চুলকানি, তলপেটে ব্যথা বা জ্বালাপোড়া হলে দেরি করবেন না।",
+      "গর্ভধারণের পরিকল্পনা থাকলে ফলিক অ্যাসিড ও প্রয়োজনীয় চেকআপ নিয়ে কথা বলুন।",
+      "গর্ভনিরোধ পদ্ধতি নিজের শরীর ও পরিস্থিতি অনুযায়ী বেছে নিতে স্বাস্থ্যকর্মীর পরামর্শ নিন।",
+    ],
+  },
+  {
+    icon: Baby,
+    title: "গর্ভাবস্থা ও প্রসব-পরবর্তী যত্ন",
+    intro:
+      "গর্ভাবস্থা ও সন্তান জন্মের পর নিয়মিত নজরদারি মা ও শিশুর জন্য গুরুত্বপূর্ণ।",
+    tips: [
+      "প্রসবপূর্ব চেকআপ, টিকা ও আয়রন-ফলিক অ্যাসিডের বিষয়ে স্বাস্থ্যকর্মীর নির্দেশনা মানুন।",
+      "প্রসবের পর অতিরিক্ত রক্তপাত, জ্বর, তীব্র মাথাব্যথা বা বুক ধড়ফড় করলে জরুরি সহায়তা নিন।",
+      "প্রসব-পরবর্তী মন খারাপ বা কান্না দীর্ঘদিন থাকলে কাউন্সেলিং বা চিকিৎসা সহায়তা নিন।",
+    ],
+  },
+  {
+    icon: Moon,
+    title: "ঘুম ও বিশ্রাম",
+    intro:
+      "ভালো ঘুম শরীরের হরমোন, মনোযোগ, রোগপ্রতিরোধ ক্ষমতা ও মেজাজে সাহায্য করে।",
+    tips: [
+      "প্রতিদিন কাছাকাছি সময়ে ঘুমাতে ও উঠতে চেষ্টা করুন।",
+      "ঘুমের আগে মোবাইল স্ক্রিন, ভারী খাবার ও অতিরিক্ত চা-কফি কমান।",
+      "দীর্ঘদিন ঘুম না হলে বা নাক ডাকা/শ্বাস বন্ধ হওয়ার সমস্যা থাকলে চিকিৎসকের পরামর্শ নিন।",
+    ],
   },
   {
     icon: Activity,
-    title: "মেনোপজ",
-    text: "জীবনের নতুন অধ্যায়ে লক্ষণ, প্রস্তুতি ও যত্নের নির্দেশিকা।",
+    title: "মেনোপজ ও হরমোন পরিবর্তন",
+    intro: "মেনোপজ স্বাভাবিক জীবনপর্ব, তবে লক্ষণ বেশি হলে সহায়তা নেওয়া দরকার।",
+    tips: [
+      "হট ফ্ল্যাশ, ঘুমের সমস্যা, মুড পরিবর্তন বা জয়েন্টে ব্যথা লিখে রাখুন।",
+      "ক্যালসিয়াম, ভিটামিন ডি, হাঁটা ও হালকা শক্তিবর্ধক ব্যায়াম হাড়ের জন্য ভালো।",
+      "এক বছর মাসিক বন্ধ থাকার পর আবার রক্তপাত হলে চিকিৎসকের সঙ্গে কথা বলুন।",
+    ],
   },
+];
+
+const weeklyHealthHabits = [
+  "কমপক্ষে ৫ দিন ২০ মিনিট হাঁটা",
+  "প্রতিদিন পর্যাপ্ত পানি ও সুষম খাবার",
+  "মাসিক/লক্ষণ ট্র্যাকার আপডেট করা",
+  "নিজের জন্য ১০ মিনিট শান্ত সময় রাখা",
+];
+
+const healthWarningSigns = [
+  "অতিরিক্ত রক্তপাত বা হঠাৎ অজ্ঞান লাগা",
+  "তীব্র তলপেট ব্যথা, জ্বর বা দুর্গন্ধযুক্ত স্রাব",
+  "গর্ভাবস্থায় রক্তপাত, খিঁচুনি, তীব্র মাথাব্যথা বা শিশুর নড়াচড়া কমে যাওয়া",
+  "নিজেকে ক্ষতি করার চিন্তা বা দীর্ঘদিন গভীর মন খারাপ",
 ];
 
 const serviceOptions = [
   "সাধারণ স্বাস্থ্য পরামর্শ",
   "মাসিক ও হরমোন কনসাল্ট",
-  "PCOS / PCOD",
+  "PMOS / PCOD",
   "গর্ভাবস্থা ও প্রসব-পরবর্তী",
   "পুষ্টি ও খাদ্যাভ্যাস",
   "মানসিক স্বাস্থ্য",
@@ -446,15 +514,17 @@ export function HomePage() {
             ✦ স্বাস্থ্য, নিরাপত্তা, ভর্তুকি ও সহায়তা এক জায়গায়
           </p>
           <h1 className="font-display max-w-2xl text-5xl font-bold leading-tight md:text-7xl">
-            নিজের যত্নে জাগুক আপনার <span className="text-[var(--primary)]">শক্তি</span>
+            নিজের যত্নে জেগে উঠুক নারী{" "}
+            <span className="text-[var(--primary)]">শক্তি</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-            পিরিয়ড ট্র্যাকিং, গর্ভাবস্থা যাত্রা, AI স্বাস্থ্য সহায়তা, ডাক্তার বুকিং,
-            ভর্তুকি আবেদন এবং জরুরি নিরাপত্তা - সবকিছু সহজ বাংলায়।
+            পিরিয়ড ট্র্যাকিং, নারীর প্রতিদিনের স্বাস্থ্য যত্ন, গর্ভাবস্থা
+            যাত্রা, AI স্বাস্থ্য সহায়তা, ডাক্তার বুকিং, ভর্তুকি আবেদন এবং জরুরি
+            নিরাপত্তা - সবকিছু সহজ বাংলায়।
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              style={{ "color": "white" }}
+              style={{ color: "white" }}
               className="focus-ring rounded-full bg-[var(--primary)] px-6 py-3 font-semibold shadow-sm transition hover:bg-[var(--primary-dark)]"
               href="/register"
             >
@@ -482,14 +552,14 @@ export function HomePage() {
         </div>
         <div className="mx-auto w-full max-w-[460px]">
           <div className="soft-card relative overflow-hidden rounded-3xl p-4">
-          <Image
-            src="/shakti-hero.jpg"
-            alt="শক্তির ফুলেল নারীর স্বাস্থ্যচিত্র"
-            width={520}
-            height={520}
-            priority
-            className="aspect-square w-full rounded-2xl object-cover"
-          />
+            <Image
+              src="/shakti-hero.png"
+              alt="শক্তির ফুলেল নারীর স্বাস্থ্যচিত্র"
+              width={520}
+              height={520}
+              priority
+              className="aspect-square w-full rounded-2xl object-cover"
+            />
           </div>
         </div>
       </section>
@@ -498,7 +568,7 @@ export function HomePage() {
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <h2 className="font-display text-4xl font-bold">আপনার জন্য যা আছে</h2>
           <p className="mt-2 text-[var(--muted)]">
-            প্রতিটি দিনের জন্য সহজ, নির্ভরযোগ্য বাংলা স্বাস্থ্য সহায়তা।
+            প্রতিটি দিনের জন্য সহজ, নির্ভরযোগ্য বাংলা সহায়তা।
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -796,19 +866,114 @@ export function HealthPage() {
   return (
     <section className="container-shell py-12">
       <SectionIntro
-        title="সমন্বিত স্বাস্থ্যসেবা"
-        subtitle="নিজের যত্নে সচেতন হোন, আত্মবিশ্বাসের সঙ্গে এগিয়ে চলুন।"
+        title="নারীর প্রতিদিনের স্বাস্থ্য যত্ন"
+        subtitle="নিজের যত্নে সচেতন হোন, আত্মবিশ্বাসের সঙ্গে এগিয়ে চলুন। নারীদের দৈনন্দিন স্বাস্থ্য যত্নের সহজ নির্দেশনা।"
       />
-      <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-        {healthCards.map((card) => (
-          <IconTile
-            key={card.title}
-            icon={card.icon}
-            title={card.title}
-            text={card.text}
-          />
+
+      <div className="mb-8 grid gap-5 md:grid-cols-4">
+        {weeklyHealthHabits.map((habit, index) => (
+          <div
+            key={habit}
+            className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm"
+          >
+            <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[var(--primary-soft)] font-display text-xl font-bold text-[var(--primary)]">
+              {bnNumber(index + 1)}
+            </div>
+            <p className="font-semibold leading-7">{habit}</p>
+          </div>
         ))}
       </div>
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        {healthAdviceSections.map((section) => {
+          const Icon = section.icon;
+
+          return (
+            <article
+              key={section.title}
+              className="rounded-2xl border border-[var(--border)] bg-white p-6 shadow-sm"
+            >
+              <div className="mb-4 flex items-start gap-4">
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--primary-soft)]">
+                  <Icon size={23} color={primary} />
+                </div>
+                <div>
+                  <h2 className="font-display text-2xl font-bold">
+                    {section.title}
+                  </h2>
+                  <p className="mt-2 leading-7 text-[var(--muted)]">
+                    {section.intro}
+                  </p>
+                </div>
+              </div>
+              <ul className="space-y-3">
+                {section.tips.map((tip) => (
+                  <li
+                    key={tip}
+                    className="flex gap-3 leading-7 text-[var(--muted)]"
+                  >
+                    <CheckCircle
+                      className="mt-1 shrink-0"
+                      size={18}
+                      color={primary}
+                    />
+                    <span>{tip}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="mt-8 rounded-2xl border border-red-200 bg-red-50 p-6">
+        <h2 className="flex items-center gap-2 font-display text-2xl font-bold text-red-700">
+          <AlertCircle size={24} /> কখন দ্রুত চিকিৎসকের সাহায্য নেবেন
+        </h2>
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          {healthWarningSigns.map((item) => (
+            <p
+              key={item}
+              className="rounded-xl bg-white px-4 py-3 leading-7 text-red-800"
+            >
+              {item}
+            </p>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-10 rounded-2xl bg-[var(--primary)] p-7 text-center text-white shadow-lg md:p-9">
+        <h2 className="font-display text-3xl font-bold">
+          নিজের লক্ষণ নিয়ে নিশ্চিত নন?
+        </h2>
+        <p className="mx-auto mt-3 max-w-2xl leading-7 text-white/85">
+          সাধারণ প্রশ্ন হলে AI স্বাস্থ্য সহায়তায় জিজ্ঞেস করুন, আর সমস্যা বেশি
+          হলে অ্যাপয়েন্টমেন্ট বুক করুন।
+        </p>
+        <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+          <Link
+            style={{ color: "#7C514A" }}
+            href="/advice"
+            className="focus-ring rounded-full bg-white px-6 py-4 font-semibold hover:bg-white/70 transition-all duration-200"
+          >
+            AI সহায়তা নিন
+          </Link>
+          <Link
+            href="/booking"
+            className="focus-ring rounded-full border-2 border-white/55 hover:border-white/90 transition-all duration-200 px-6 py-3 font-semibold"
+            style={{ color: "white" }}
+          >
+            অ্যাপয়েন্টমেন্ট বুক করুন
+          </Link>
+        </div>
+      </div>
+
+      <p className="mt-6 rounded-2xl border border-[var(--border)] bg-[#fff0e9] p-5 leading-7 text-[var(--muted)]">
+        <strong className="text-[var(--foreground)]">দ্রষ্টব্য:</strong> এই
+        তথ্যগুলো সাধারণ স্বাস্থ্য সচেতনতার জন্য। ব্যক্তিগত রোগ, ওষুধ, গর্ভাবস্থা
+        বা জরুরি লক্ষণের ক্ষেত্রে চিকিৎসক বা প্রশিক্ষিত স্বাস্থ্যকর্মীর পরামর্শ
+        নিন।
+      </p>
     </section>
   );
 }
@@ -828,7 +993,9 @@ export function SubsidyPage() {
 
   function toggleItem(item: string) {
     setSelectedItems((items) =>
-      items.includes(item) ? items.filter((value) => value !== item) : [...items, item],
+      items.includes(item)
+        ? items.filter((value) => value !== item)
+        : [...items, item],
     );
   }
 
@@ -843,8 +1010,10 @@ export function SubsidyPage() {
     const items = selectedItems.length ? selectedItems.join(", ") : "প্যাড";
     const freeIncomeLimit = 15000;
     const lowIncomeLimit = 25000;
-    const plan: "free" | "paid" = income > 0 && income <= freeIncomeLimit ? "free" : "paid";
-    const isRemote = locationType === "very-remote" || locationType === "remote";
+    const plan: "free" | "paid" =
+      income > 0 && income <= freeIncomeLimit ? "free" : "paid";
+    const isRemote =
+      locationType === "very-remote" || locationType === "remote";
     const fee = plan === "free" ? 0 : income <= lowIncomeLimit ? 180 : 320;
     const ref = `SK-${Date.now().toString().slice(-6)}`;
 
@@ -889,7 +1058,10 @@ export function SubsidyPage() {
         />
       </div>
 
-      <form onSubmit={applyForSubsidy} className="soft-card mx-auto max-w-5xl rounded-2xl p-6 md:p-9">
+      <form
+        onSubmit={applyForSubsidy}
+        className="soft-card mx-auto max-w-5xl rounded-2xl p-6 md:p-9"
+      >
         <div className="grid gap-7 lg:grid-cols-[1fr_0.8fr]">
           <div>
             <h2 className="font-display text-3xl font-bold">আবেদনকারীর তথ্য</h2>
@@ -985,7 +1157,9 @@ export function SubsidyPage() {
               </label>
             </div>
 
-            <h3 className="mt-8 font-display text-2xl font-bold">এলাকার অবস্থা</h3>
+            <h3 className="mt-8 font-display text-2xl font-bold">
+              এলাকার অবস্থা
+            </h3>
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               {[
                 ["very-remote", "অতি দূরবর্তী / দুর্গম"],
@@ -1070,8 +1244,9 @@ export function SubsidyPage() {
             </label>
 
             <p className="mt-6 rounded-xl border border-[var(--border)] bg-white p-4 text-sm leading-7 text-[var(--muted)]">
-              মাসিক আয় ১৫,০০০ টাকার মধ্যে হলে বিনামূল্যে ভর্তুকি পাওয়া যাবে। আয় বেশি হলে একই সুবিধা পেইড সার্ভিস হিসেবে দেওয়া হবে।
-              বাস্তব ডেলিভারির আগে ফোনে তথ্য যাচাই করা হবে।
+              মাসিক আয় ১৫,০০০ টাকার মধ্যে হলে বিনামূল্যে ভর্তুকি পাওয়া যাবে। আয়
+              বেশি হলে একই সুবিধা পেইড সার্ভিস হিসেবে দেওয়া হবে। বাস্তব
+              ডেলিভারির আগে ফোনে তথ্য যাচাই করা হবে।
             </p>
           </div>
         </div>
@@ -1090,12 +1265,14 @@ export function SubsidyPage() {
               আবেদন গ্রহণ করা হয়েছে
             </p>
             <p className="mt-3">
-              {result.applicant}, আপনার আবেদন নম্বর <strong>{result.ref}</strong>। নির্বাচিত সহায়তা:{" "}
+              {result.applicant}, আপনার আবেদন নম্বর{" "}
+              <strong>{result.ref}</strong>। নির্বাচিত সহায়তা:{" "}
               <strong>{result.items}</strong>।
             </p>
             <p className="mt-2">{result.message}</p>
             <p className="mt-2 text-sm">
-              বয়স: {bnNumber(result.age)} বছর · মাসিক আয়: {bnNumber(result.income)} টাকা
+              বয়স: {bnNumber(result.age)} বছর · মাসিক আয়:{" "}
+              {bnNumber(result.income)} টাকা
             </p>
             <p className="mt-2 text-sm">
               অবস্থা:{" "}
@@ -1142,12 +1319,19 @@ export function RegisterPage() {
           <UserPlus size={34} />
           <h2 className="font-display mt-4 text-4xl font-bold">সহজ শুরু</h2>
           <p className="mt-3 leading-7 text-white/90">
-            শুধু কয়েকটি তথ্য দিন। এরপর পিরিয়ড ট্র্যাকার, বুকিং, ভর্তুকি আবেদন ও জরুরি সেবা সহজে ব্যবহার করুন।
+            শুধু কয়েকটি তথ্য দিন। এরপর পিরিয়ড ট্র্যাকার, বুকিং, ভর্তুকি আবেদন ও
+            জরুরি সেবা সহজে ব্যবহার করুন।
           </p>
           <div className="mt-7 grid gap-3 text-sm font-semibold">
-            <span className="rounded-xl bg-white/18 px-4 py-3">১. নাম ও ফোন নম্বর দিন</span>
-            <span className="rounded-xl bg-white/18 px-4 py-3">২. এলাকা ও প্রয়োজন বেছে নিন</span>
-            <span className="rounded-xl bg-white/18 px-4 py-3">৩. সেবা ব্যবহার শুরু করুন</span>
+            <span className="rounded-xl bg-white/18 px-4 py-3">
+              ১. নাম ও ফোন নম্বর দিন
+            </span>
+            <span className="rounded-xl bg-white/18 px-4 py-3">
+              ২. এলাকা ও প্রয়োজন বেছে নিন
+            </span>
+            <span className="rounded-xl bg-white/18 px-4 py-3">
+              ৩. সেবা ব্যবহার শুরু করুন
+            </span>
           </div>
         </div>
 
@@ -1205,8 +1389,13 @@ export function RegisterPage() {
               </select>
             </label>
             <label className="flex items-start gap-3 rounded-xl border border-[var(--border)] bg-[#fff0e9] p-4 text-sm leading-6 text-[var(--muted)] md:col-span-2">
-              <input className="mt-1 accent-[var(--primary)]" type="checkbox" required />
-              আমি সম্মত যে শক্তি আমার দেওয়া তথ্য সেবা, বুকিং ও সহায়তার জন্য ব্যবহার করতে পারবে।
+              <input
+                className="mt-1 accent-[var(--primary)]"
+                type="checkbox"
+                required
+              />
+              আমি সম্মত যে শক্তি আমার দেওয়া তথ্য সেবা, বুকিং ও সহায়তার জন্য
+              ব্যবহার করতে পারবে।
             </label>
           </div>
 
@@ -1224,8 +1413,10 @@ export function RegisterPage() {
                 অ্যাকাউন্ট তৈরি হয়েছে
               </p>
               <p className="mt-2">
-                {registered.name}, আপনার অ্যাকাউন্ট নম্বর <strong>{registered.ref}</strong>। আমরা{" "}
-                <strong>{registered.phone}</strong> নম্বরে প্রয়োজনীয় আপডেট পাঠাব।
+                {registered.name}, আপনার অ্যাকাউন্ট নম্বর{" "}
+                <strong>{registered.ref}</strong>। আমরা{" "}
+                <strong>{registered.phone}</strong> নম্বরে প্রয়োজনীয় আপডেট
+                পাঠাব।
               </p>
             </div>
           ) : null}
@@ -1235,10 +1426,21 @@ export function RegisterPage() {
   );
 }
 
+const defaultAdviceQuestions = [
+  "মাসিকের সময় পেটে ব্যথা কমাবো কীভাবে?",
+  "PMOS-এর লক্ষণ কী কী?",
+  "গর্ভাবস্থায় কোন খাবার উপকারী?",
+  "মানসিক চাপ কমানোর উপায়?",
+];
+
+function isDefaultAdviceQuestion(question: string) {
+  return defaultAdviceQuestions.some((item) => item === question.trim());
+}
+
 function answerFor(question: string) {
   const q = question.toLowerCase();
-  if (q.includes("pcos") || q.includes("pcod")) {
-    return "PCOS/PCOD হলে অনিয়মিত মাসিক, ব্রণ, ওজন পরিবর্তন বা অতিরিক্ত লোম দেখা দিতে পারে। নিয়মিত খাবার, ঘুম, ব্যায়াম এবং গাইনি বিশেষজ্ঞের পরামর্শ খুব গুরুত্বপূর্ণ।";
+  if (q.includes("pmos") || q.includes("pcod")) {
+    return "PMOS/PCOD হলে অনিয়মিত মাসিক, ব্রণ, ওজন পরিবর্তন বা অতিরিক্ত লোম দেখা দিতে পারে। নিয়মিত খাবার, ঘুম, ব্যায়াম এবং গাইনি বিশেষজ্ঞের পরামর্শ খুব গুরুত্বপূর্ণ।";
   }
   if (q.includes("ব্যথা") || q.includes("cramp") || q.includes("মাসিক")) {
     return "মাসিকের ব্যথায় গরম সেঁক, পর্যাপ্ত পানি, হালকা স্ট্রেচিং এবং বিশ্রাম সাহায্য করতে পারে। ব্যথা খুব বেশি হলে, জ্বর থাকলে বা রক্তপাত অস্বাভাবিক হলে চিকিৎসকের সাথে কথা বলুন।";
@@ -1260,26 +1462,55 @@ export function AdvicePage() {
     },
   ]);
   const [question, setQuestion] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function sendQuestion(value: string) {
+    const clean = value.trim();
+    if (!clean || loading) return;
+
+    setLoading(true);
+    setQuestion("");
+    setMessages((items) => [...items, { role: "user", text: clean }]);
+
+    if (isDefaultAdviceQuestion(clean)) {
+      setMessages((items) => [
+        ...items,
+        { role: "assistant", text: answerFor(clean) },
+      ]);
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/advice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: clean }),
+      });
+      const data = (await response.json()) as {
+        answer?: string;
+        error?: string;
+      };
+      const answer =
+        response.ok && data.answer ? data.answer : answerFor(clean);
+      setMessages((items) => [...items, { role: "assistant", text: answer }]);
+    } catch {
+      setMessages((items) => [
+        ...items,
+        { role: "assistant", text: answerFor(clean) },
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   function submit(event?: FormEvent) {
     event?.preventDefault();
-    const clean = question.trim();
-    if (!clean) return;
-    setMessages((items) => [
-      ...items,
-      { role: "user", text: clean },
-      { role: "assistant", text: answerFor(clean) },
-    ]);
-    setQuestion("");
+    void sendQuestion(question);
   }
 
   function askQuick(value: string) {
-    setQuestion(value);
-    setMessages((items) => [
-      ...items,
-      { role: "user", text: value },
-      { role: "assistant", text: answerFor(value) },
-    ]);
+    void sendQuestion(value);
   }
 
   return (
@@ -1304,6 +1535,13 @@ export function AdvicePage() {
               </p>
             </div>
           ))}
+          {loading && (
+            <div className="flex justify-start">
+              <p className="max-w-[78%] rounded-2xl bg-[var(--primary-soft)] px-5 py-4 leading-7 text-[var(--foreground)]">
+                উত্তর তৈরি হচ্ছে...
+              </p>
+            </div>
+          )}
         </div>
         <form
           onSubmit={submit}
@@ -1314,11 +1552,13 @@ export function AdvicePage() {
             value={question}
             onChange={(event) => setQuestion(event.target.value)}
             placeholder="আপনার প্রশ্ন লিখুন..."
+            disabled={loading}
           />
           <button
-            className="focus-ring grid h-12 w-12 place-items-center rounded-full bg-[var(--primary)] text-white transition hover:bg-[var(--primary-dark)]"
+            className="focus-ring grid h-12 w-12 place-items-center rounded-full bg-[var(--primary)] text-white transition hover:bg-[var(--primary-dark)] disabled:cursor-not-allowed disabled:opacity-60"
             type="submit"
             aria-label="পাঠান"
+            disabled={loading}
           >
             <Send size={20} />
           </button>
@@ -1328,17 +1568,13 @@ export function AdvicePage() {
       <div className="mx-auto mt-6 max-w-4xl">
         <p className="mb-3 text-sm text-[var(--muted)]">দ্রুত শুরু করুন:</p>
         <div className="flex flex-wrap gap-2">
-          {[
-            "মাসিকের সময় পেটে ব্যথা কমাবো কীভাবে?",
-            "PCOS-এর লক্ষণ কী কী?",
-            "গর্ভাবস্থায় কোন খাবার উপকারী?",
-            "মানসিক চাপ কমানোর উপায়?",
-          ].map((item) => (
+          {defaultAdviceQuestions.map((item) => (
             <button
               key={item}
               onClick={() => askQuick(item)}
-              className="focus-ring rounded-full border border-[var(--border)] bg-white px-4 py-2 text-sm transition hover:border-[var(--primary)]"
+              className="focus-ring rounded-full border border-[var(--border)] bg-white px-4 py-2 text-sm transition hover:border-[var(--primary)] disabled:cursor-not-allowed disabled:opacity-60"
               type="button"
+              disabled={loading}
             >
               {item}
             </button>
@@ -1351,7 +1587,9 @@ export function AdvicePage() {
 
 export function BookingPage() {
   const [service, setService] = useState(serviceOptions[0]);
-  const [consultType, setConsultType] = useState<"trainee-call" | "physical">("trainee-call");
+  const [consultType, setConsultType] = useState<"trainee-call" | "physical">(
+    "trainee-call",
+  );
   const [date, setDate] = useState(todayIso);
   const [time, setTime] = useState(timeOptions[0]);
   const [confirmed, setConfirmed] = useState("");
@@ -1386,7 +1624,7 @@ export function BookingPage() {
       <SectionIntro
         eyebrow="অনলাইন বুকিং"
         title="অ্যাপয়েন্টমেন্ট বুক করুন"
-        subtitle="আপনার ডাক্তার, আপনার সময়ে। ফোনে ট্রেইনি ডাক্তার অথবা সরাসরি অ্যাপয়েন্টমেন্ট বেছে নিন।"
+        subtitle="আপনার ডাক্তার, আপনার সময়ে। ফোনে প্রশিক্ষণার্থী ডাক্তার অথবা সরাসরি অ্যাপয়েন্টমেন্ট বেছে নিন।"
       />
 
       <form
@@ -1400,7 +1638,7 @@ export function BookingPage() {
           {[
             {
               value: "trainee-call" as const,
-              title: "ট্রেইনি ডাক্তারকে কল করুন",
+              title: "প্রশিক্ষণার্থী ডাক্তারকে কল করুন",
               text: "১৬০ টাকায় ফোনে প্রাথমিক স্বাস্থ্য পরামর্শ নিন।",
               fee: "১৬০ টাকা",
             },
@@ -1421,8 +1659,12 @@ export function BookingPage() {
                   : "border-[var(--border)] bg-[var(--background)]"
               }`}
             >
-              <span className="font-display text-2xl font-bold">{option.title}</span>
-              <span className="mt-2 block leading-7 text-[var(--muted)]">{option.text}</span>
+              <span className="font-display text-2xl font-bold">
+                {option.title}
+              </span>
+              <span className="mt-2 block leading-7 text-[var(--muted)]">
+                {option.text}
+              </span>
               <span className="mt-4 inline-flex rounded-full bg-[var(--primary-soft)] px-4 py-1 text-sm font-semibold text-[var(--primary)]">
                 {option.fee}
               </span>
@@ -1698,7 +1940,9 @@ export function EmergencyPage() {
         setLocationStatus("লোকেশন কপি হয়েছে। যাকে দরকার তাকে পাঠিয়ে দিন।");
       }
     } catch {
-      setLocationStatus("লোকেশন শেয়ার করা যায়নি। আবার চেষ্টা করুন বা জরুরি নম্বরে কল করুন।");
+      setLocationStatus(
+        "লোকেশন শেয়ার করা যায়নি। আবার চেষ্টা করুন বা জরুরি নম্বরে কল করুন।",
+      );
     }
   }
 
